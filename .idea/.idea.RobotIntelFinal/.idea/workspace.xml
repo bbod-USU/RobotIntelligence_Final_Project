@@ -15,15 +15,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dafcaeb7-80aa-43a3-a480-786fafb78c0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleApp/IModule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RobotIntelFinal.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Simulator/Networking/INetworkInterface.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Simulator/Networking/INetworkInterfaceFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Simulator/Networking/NetworkInterface.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Simulator/Networking/NetworkInterfaceFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Simulator/SimulatorModule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/Bootstrapper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/IMapFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/IUserConsole.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/MapFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/Module.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/UserConsole.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulator/Networking/INetworkInterface.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulator/Networking/INetworkInterfaceFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulator/Networking/NetworkInterface.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulator/Networking/NetworkInterfaceFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulator/Networking/SimulatorModule.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulator/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulator/Simulator.csproj" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +46,6 @@
       <list>
         <option value="$PROJECT_DIR$/Simulator/Program.cs" />
         <option value="$PROJECT_DIR$/Simulator/CoreModule.cs" />
-        <option value="$PROJECT_DIR$/ConsoleApp/Program.cs" />
-        <option value="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/IModule.cs" />
         <option value="$PROJECT_DIR$/Simulator/SimulatorModule.cs" />
         <option value="$PROJECT_DIR$/Simulator/NetworkInterfaceFactory.cs" />
@@ -49,6 +55,14 @@
         <option value="$PROJECT_DIR$/Simulator/Networking/INetworkInterfaceFactory.cs" />
         <option value="$PROJECT_DIR$/Simulator/Networking/INetworkInterface.cs" />
         <option value="$PROJECT_DIR$/Simulator/Networking/NetworkInterface.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/IUserConsole.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/Module.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/IMapFactory.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/MapFactory.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/UserConsole.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/Program.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/Bootstrapper.cs" />
       </list>
     </option>
   </component>
@@ -65,7 +79,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.Simulator">
+  <component name="RunManager" selected=".NET Project.ConsoleApp">
     <configuration name="ConsoleApp" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -96,7 +110,7 @@
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
-      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_KIND" value="Unloaded" />
       <option name="PROJECT_TFM" value="" />
       <method v="2">
         <option name="Build" />
@@ -118,7 +132,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -130,6 +144,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
@@ -140,5 +155,13 @@
     </state>
     <state x="1640" y="-86" key="Rider.ProjectTemplateDialog.Size/0.0.1440.900/2640.-782.1200.1920/1440.-782.1200.1920@1440.-782.1200.1920" timestamp="1607286605974" />
     <state x="1640" y="-86" key="Rider.ProjectTemplateDialog.Size/0.25.1440.798/2640.-757.1200.1895/1440.-782.1200.1920@1440.-782.1200.1920" timestamp="1607287214952" />
+    <state x="1860" y="-144" key="RiderGenerateDialog" timestamp="1607634276930">
+      <screen x="1440" y="-782" width="1200" height="1920" />
+    </state>
+    <state x="1860" y="-144" key="RiderGenerateDialog/0.0.1440.900/2640.-782.1200.1920/1440.-782.1200.1920@1440.-782.1200.1920" timestamp="1607634276930" />
+    <state x="1703" y="-333" width="672" height="678" key="search.everywhere.popup" timestamp="1607633696072">
+      <screen x="1440" y="-782" width="1200" height="1920" />
+    </state>
+    <state x="1703" y="-333" width="672" height="678" key="search.everywhere.popup/0.0.1440.900/2640.-782.1200.1920/1440.-782.1200.1920@1440.-782.1200.1920" timestamp="1607633696072" />
   </component>
 </project>

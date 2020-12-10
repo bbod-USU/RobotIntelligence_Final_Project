@@ -4,9 +4,14 @@
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="ConsoleApp" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Bootstrapper.cs" t="Include" />
         <e p="ConsoleApp.csproj" t="IncludeRecursive" />
         <e p="CoreModule.cs" t="Include" />
+        <e p="IMapFactory.cs" t="Include" />
         <e p="IModule.cs" t="Include" />
+        <e p="IUserConsole.cs" t="Include" />
+        <e p="MapFactory.cs" t="Include" />
+        <e p="Module.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -15,6 +20,7 @@
           </e>
         </e>
         <e p="Program.cs" t="Include" />
+        <e p="UserConsole.cs" t="Include" />
       </e>
       <e p="packages" t="ExcludeRecursive" />
       <e p="RobotIntelFinal.sln" t="IncludeFlat" />
