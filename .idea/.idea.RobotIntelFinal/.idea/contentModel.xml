@@ -11,8 +11,16 @@
         <e p="ISimRunner.cs" t="Include" />
         <e p="IUserConsole.cs" t="Include" />
         <e p="Maps" t="Include">
+          <e p="HexCell.cs" t="Include" />
+          <e p="HexMap.cs" t="Include" />
+          <e p="IHexCell.cs" t="Include" />
+          <e p="IHexMap.cs" t="Include" />
           <e p="IMapFactory.cs" t="Include" />
+          <e p="ISquareCell.cs" t="Include" />
+          <e p="ISquareMap.cs" t="Include" />
           <e p="MapFactory.cs" t="Include" />
+          <e p="SquareCell.cs" t="Include" />
+          <e p="SquareMap.cs" t="Include" />
         </e>
         <e p="Module.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">

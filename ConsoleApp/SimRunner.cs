@@ -1,3 +1,5 @@
+using ConsoleApp.Maps;
+
 namespace ConsoleApp
 {
     public class SimRunner : ISimRunner

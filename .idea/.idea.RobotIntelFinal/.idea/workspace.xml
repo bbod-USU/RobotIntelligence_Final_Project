@@ -15,25 +15,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dafcaeb7-80aa-43a3-a480-786fafb78c0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ConsoleApp/Bootstrapper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleApp/ISimRunner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleApp/IUserConsole.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleApp/Maps/IMapFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleApp/Maps/MapFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleApp/Module.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleApp/UserConsole.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/Maps/HexCell.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/Maps/HexMap.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/Maps/IHexCell.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/Maps/IHexMap.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/Maps/ISquareCell.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/Maps/ISquareMap.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/Maps/SquareCell.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/Maps/SquareMap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Bootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Bootstrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/ISimRunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/ISimRunner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/IMapFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/IMapFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/MapFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/MapFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Simulator/Networking/INetworkInterface.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Simulator/Networking/INetworkInterfaceFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Simulator/Networking/NetworkInterface.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Simulator/Networking/NetworkInterfaceFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Simulator/Networking/SimulatorModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Simulator/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Simulator/Simulator.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,11 +59,21 @@
         <option value="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/MapFactory.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/UserConsole.cs" />
-        <option value="$PROJECT_DIR$/ConsoleApp/Program.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/IMapFactory.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/Bootstrapper.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/Maps/IMapFactory.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/ISimRunner.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" />
-        <option value="$PROJECT_DIR$/ConsoleApp/IMapFactory.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/Program.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/Maps/MapFactory.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/Maps/SquareMap.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/Maps/HexMap.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/Maps/IHexMap.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/Maps/ISquareMap.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/Maps/HexCell.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/Maps/IHexCell.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/Maps/SquareCell.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/Maps/ISquareCell.cs" />
       </list>
     </option>
   </component>
@@ -175,10 +182,10 @@
     </state>
     <state x="1640" y="-86" key="Rider.ProjectTemplateDialog.Size/0.0.1440.900/2640.-782.1200.1920/1440.-782.1200.1920@1440.-782.1200.1920" timestamp="1607286605974" />
     <state x="1640" y="-86" key="Rider.ProjectTemplateDialog.Size/0.25.1440.798/2640.-757.1200.1895/1440.-782.1200.1920@1440.-782.1200.1920" timestamp="1607287214952" />
-    <state x="1860" y="-144" key="RiderGenerateDialog" timestamp="1607635610011">
+    <state x="1860" y="-144" key="RiderGenerateDialog" timestamp="1607636510472">
       <screen x="1440" y="-782" width="1200" height="1920" />
     </state>
-    <state x="1860" y="-144" key="RiderGenerateDialog/0.0.1440.900/2640.-782.1200.1920/1440.-782.1200.1920@1440.-782.1200.1920" timestamp="1607635610011" />
+    <state x="1860" y="-144" key="RiderGenerateDialog/0.0.1440.900/2640.-782.1200.1920/1440.-782.1200.1920@1440.-782.1200.1920" timestamp="1607636510472" />
     <state x="1703" y="-333" width="672" height="678" key="search.everywhere.popup" timestamp="1607633696072">
       <screen x="1440" y="-782" width="1200" height="1920" />
     </state>
