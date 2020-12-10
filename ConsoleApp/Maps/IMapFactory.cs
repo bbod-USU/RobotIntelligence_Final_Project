@@ -7,5 +7,6 @@ namespace ConsoleApp
         int Height { get; }
         int Width { get; }
         SquareMap SquareMap { get; }
+        void GenerateMaps(int x, int y);
     }
 }

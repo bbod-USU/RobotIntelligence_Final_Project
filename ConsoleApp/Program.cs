@@ -5,9 +5,11 @@ namespace ConsoleApp
     class Program
     {
         private static UserConsole _userConsole;
+        private static BootStrapper _bootstrapper;
 
         static void Main(string[] args)
         {
+            _bootstrapper = new BootStrapper();
             _userConsole = new UserConsole();
             StartSimulation();
         }
@@ -30,8 +32,11 @@ namespace ConsoleApp
 
         private static void RunSimulation(int x,int y)
         {
-            var bootStrapper = new Bootstrapper
-            var simRunner = new SimRunner();
+            var simRunner = _bootstrapper.Resolve<ISimRunner>();
+            var mapFactory = _bootstrapper.Resolve<IMapFactory>();
+            
+            mapFactory.GenerateMaps(x, y);
+            simRunner.Run();
         }
 
     }
