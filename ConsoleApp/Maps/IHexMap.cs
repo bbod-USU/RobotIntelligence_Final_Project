@@ -1,4 +1,4 @@
-namespace ConsoleApp
+namespace ConsoleApp.Maps
 {
     public interface IHexMap
     {
