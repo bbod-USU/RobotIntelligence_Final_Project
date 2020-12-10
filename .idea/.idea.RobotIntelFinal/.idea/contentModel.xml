@@ -7,10 +7,13 @@
         <e p="Bootstrapper.cs" t="Include" />
         <e p="ConsoleApp.csproj" t="IncludeRecursive" />
         <e p="CoreModule.cs" t="Include" />
-        <e p="IMapFactory.cs" t="Include" />
         <e p="IModule.cs" t="Include" />
+        <e p="ISimRunner.cs" t="Include" />
         <e p="IUserConsole.cs" t="Include" />
-        <e p="MapFactory.cs" t="Include" />
+        <e p="Maps" t="Include">
+          <e p="IMapFactory.cs" t="Include" />
+          <e p="MapFactory.cs" t="Include" />
+        </e>
         <e p="Module.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -20,6 +23,7 @@
           </e>
         </e>
         <e p="Program.cs" t="Include" />
+        <e p="SimRunner.cs" t="Include" />
         <e p="UserConsole.cs" t="Include" />
       </e>
       <e p="packages" t="ExcludeRecursive" />

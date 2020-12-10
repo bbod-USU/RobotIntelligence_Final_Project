@@ -8,14 +8,8 @@ namespace ConsoleApp
         {
             _mapFactory = mapFactory;
         }
-        public void GenerateMaps(int x, int y)
-        {
-            _mapFactory.GenerateMaps(x, y);
-            _mapFactory.SquareMap();
-            throw new System.NotImplementedException();
-        }
 
-        public void StartSim()
+        public void Run()
         {
             throw new System.NotImplementedException();
         }
