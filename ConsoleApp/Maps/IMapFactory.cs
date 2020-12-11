@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Dynamic;
 
 namespace ConsoleApp.Maps
@@ -6,7 +7,7 @@ namespace ConsoleApp.Maps
     {
         int Height { get; }
         int Width { get; }
-        SquareMap SquareMap { get; }
+        Dictionary<string, IMap> Maps { get; }
         void GenerateMaps(int x, int y);
     }
 }

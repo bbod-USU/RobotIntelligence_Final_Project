@@ -19,12 +19,12 @@ namespace ConsoleApp.Maps
             }
         }
 
-        public List<ICell> PossibleMoves(SquareCell myCell)
+        public List<ICell> PossibleMoves(ICell currentCell)
         {
-            var forward = (myCell.X , myCell.Y + 1);
-            var backwards= (myCell.X , myCell.Y - 1);
-            var right = (myCell.X + 1, myCell.Y);
-            var left = (myCell.X - 1, myCell.Y);
+            var forward = (currentCell.X , currentCell.Y + 1);
+            var backwards= (currentCell.X , currentCell.Y - 1);
+            var right = (currentCell.X + 1, currentCell.Y);
+            var left = (currentCell.X - 1, currentCell.Y);
             var possibles = new List<ICell>();
             possibles.Add(Map[forward.Item1, forward.Item2]);
             possibles.Add(Map[backwards.Item1, backwards.Item2]);

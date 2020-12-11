@@ -1,6 +1,6 @@
 namespace ConsoleApp.Maps
 {
-    public interface ISquareMap
+    public interface ISquareMap : IMap
     {
         
     }

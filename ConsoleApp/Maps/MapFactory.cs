@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace ConsoleApp.Maps
 {
     public class MapFactory : IMapFactory
@@ -6,15 +8,16 @@ namespace ConsoleApp.Maps
         private int _defaultWidth;
         public int Height { get; protected set; }
         public int Width { get; protected set; }
-        public SquareMap SquareMap { get; }
-        public HexMap HexMap { get; }
-        
-        
+
+        public Dictionary<string, IMap> Maps { get; }
+
+
         public void GenerateMaps(int x, int y)
         {
             Width = x;
             Height = y;
-            new SquareMap(x, y);
+            Maps.Add("SquareMap",new SquareMap(x, y));
+            Maps.Add("HexMap", new HexMap(x, y));
         }
 
         public MapFactory()
@@ -23,6 +26,7 @@ namespace ConsoleApp.Maps
             _defaultWidth = 0;
             Height = _defaultHeight;
             Width = _defaultWidth;
+            Maps = new Dictionary<string, IMap>();
         }
         
     }

@@ -4,6 +4,6 @@ namespace ConsoleApp.Maps
 {
     public interface IMap
     {
-        public List<ICell> PossibleMoves();
+        public List<ICell> PossibleMoves(ICell currentCell);
     }
 }

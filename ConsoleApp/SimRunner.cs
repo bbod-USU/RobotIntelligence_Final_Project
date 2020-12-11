@@ -13,7 +13,7 @@ namespace ConsoleApp
 
         public void Run()
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }

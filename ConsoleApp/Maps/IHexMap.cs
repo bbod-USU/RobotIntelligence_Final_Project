@@ -1,6 +1,6 @@
 namespace ConsoleApp.Maps
 {
-    public interface IHexMap
+    public interface IHexMap : IMap
     {
         
     }
