@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ConsoleApp.Maps
 {
-    public struct HexCell
+    public struct HexCell : IHexCell
     {
         public int Q { get; }
         public int R { get; }

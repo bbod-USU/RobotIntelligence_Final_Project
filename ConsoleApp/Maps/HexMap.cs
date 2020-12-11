@@ -17,9 +17,9 @@ namespace ConsoleApp.Maps
             }
         }
 
-        public List<HexCell> PossibleMoves(HexCell fromCell, Direction direction, Double orientation)
+        public List<ICell> PossibleMoves(HexCell fromCell, Direction direction, Double orientation)
         {
-            
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,6 +1,6 @@
 namespace ConsoleApp.Maps
 {
-    public interface IHexCell
+    public interface IHexCell : ICell
     {
         
     }
