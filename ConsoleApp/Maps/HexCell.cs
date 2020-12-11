@@ -1,6 +1,6 @@
 namespace ConsoleApp
 {
-    public class HexCell
+    public struct HexCell
     {
         
     }

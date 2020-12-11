@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using ConsoleApp.Maps;
 
@@ -28,18 +29,22 @@ namespace ConsoleApp
 
         public (int width, int height) GetMapDimensions()
         {
-            Console.WriteLine($"Enter Dimensions of map/area to clear as (x, y)");
-            var input = GetUserInput();
-            var numbers = input.Split();
-            if (numbers.Length != 4)
+            Console.WriteLine($"Enter map height: ");
+            var x = GetUserInput();
+
+            if (!int.TryParse(x, out var width))
             {
                 PrintInvalidInput();
                 GetMapDimensions();
             }
 
-            var parsedNumbers = numbers.Where(x => !(x.Equals("(") || x.Equals(")"))).ToList();
-            int.TryParse(parsedNumbers[0], out var width);
-            int.TryParse(parsedNumbers[1], out var height);
+            Console.WriteLine($"Enter map height: ");
+            var y = GetUserInput();
+            if(!int.TryParse(y, out var height))
+            {
+                PrintInvalidInput();
+                GetMapDimensions();
+            }
             return (width, height);
         }
     }

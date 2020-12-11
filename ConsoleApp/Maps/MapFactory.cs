@@ -14,7 +14,7 @@ namespace ConsoleApp.Maps
         {
             Width = x;
             Height = y;
-            throw new System.NotImplementedException();
+            new SquareMap(x, y);
         }
 
         public MapFactory()

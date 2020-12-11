@@ -10,12 +10,12 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
-            _bootstrapper = new BootStrapper();
+            _bootstrapper = BootStrapper.BootstrapSystem(new CoreModule());
             _userConsole = new UserConsole();
-            StartSimulation();
+            Initialization();
         }
 
-        private static void StartSimulation()
+        private static void Initialization()
         {
             _userConsole.PrintStartMenu();
             var input = _userConsole.GetUserInput();
@@ -27,14 +27,14 @@ namespace ConsoleApp
             else
             {
                 _userConsole.PrintInvalidInput();
-                StartSimulation();
+                Initialization();
             }
         }
 
         private static void RunSimulation(int x,int y)
         {
-            var simRunner = _bootstrapper.Resolve<ISimRunner>();
             var mapFactory = _bootstrapper.Resolve<IMapFactory>();
+            var simRunner = _bootstrapper.Resolve<ISimRunner>();
             
             mapFactory.GenerateMaps(x, y);
             simRunner.Run();
