@@ -1,4 +1,9 @@
-$HEADER$namespace $NAMESPACE$
+namespace ConsoleApp
 {
-  public interface $INTERFACE$ {$END$}
+    public interface IVehicle
+    {
+        int Length { get; }
+        int Width { get; }
+        int DetectorWidth { get; }
+    }
 }

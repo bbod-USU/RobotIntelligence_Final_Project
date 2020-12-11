@@ -7,9 +7,12 @@
         <e p="Bootstrapper.cs" t="Include" />
         <e p="ConsoleApp.csproj" t="IncludeRecursive" />
         <e p="CoreModule.cs" t="Include" />
+        <e p="IJsonDeserializor.cs" t="Include" />
         <e p="IModule.cs" t="Include" />
         <e p="ISimRunner.cs" t="Include" />
         <e p="IUserConsole.cs" t="Include" />
+        <e p="IVehicle.cs" t="Include" />
+        <e p="JsonDeserializor.cs" t="Include" />
         <e p="Maps" t="Include">
           <e p="Direction.cs" t="Include" />
           <e p="Heading.cs" t="Include" />
@@ -36,6 +39,9 @@
         <e p="Program.cs" t="Include" />
         <e p="SimRunner.cs" t="Include" />
         <e p="UserConsole.cs" t="Include" />
+        <e p="Vehicle.cs" t="Include" />
+        <e p="VehicleConfiguration.cs" t="Include" />
+        <e p="VehicleConfiguration.json" t="Include" />
       </e>
       <e p="packages" t="ExcludeRecursive" />
       <e p="RobotIntelFinal.sln" t="IncludeFlat" />

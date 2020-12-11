@@ -1,4 +1,7 @@
-$HEADER$namespace $NAMESPACE$
+namespace ConsoleApp
 {
-  public interface $INTERFACE$ {$END$}
+    public interface IJsonDeserializor
+    {
+        T DeserializeObject<T>(string filePath);
+    }
 }

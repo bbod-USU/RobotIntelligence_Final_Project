@@ -15,24 +15,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dafcaeb7-80aa-43a3-a480-786fafb78c0b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/IJsonDeserializor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/IVehicle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/JsonDeserializor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/Vehicle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/VehicleConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/VehicleConfiguration.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/HexCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/HexCell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/HexMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/HexMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/ICell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/ICell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/IHexMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/IHexMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/IMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/IMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/IMapFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/IMapFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/ISquareCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/ISquareCell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/ISquareMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/ISquareMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/MapFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/MapFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/SquareCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/SquareCell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/SquareMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/SquareMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/ConsoleApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/ConsoleApp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JSON File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,10 +62,8 @@
         <option value="$PROJECT_DIR$/ConsoleApp/IMapFactory.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/Bootstrapper.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/ISimRunner.cs" />
-        <option value="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/UserConsole.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/Program.cs" />
-        <option value="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/Maps/IMapManager.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/Maps/Direction.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/Maps/Heading.cs" />
@@ -77,6 +80,14 @@
         <option value="$PROJECT_DIR$/ConsoleApp/Maps/ISquareCell.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/Maps/MapFactory.cs" />
         <option value="$PROJECT_DIR$/ConsoleApp/Maps/HexMap.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/VehicleConfiguration.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/JsonDeserializor.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/IJsonDeserializor.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/Vehicle.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/IVehicle.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" />
+        <option value="$PROJECT_DIR$/ConsoleApp/VehicleConfiguration.json" />
       </list>
     </option>
   </component>
@@ -146,7 +157,7 @@
       <workItem from="1607286402206" duration="6845000" />
       <workItem from="1607640133651" duration="318000" />
       <workItem from="1607640470920" duration="58000" />
-      <workItem from="1607640550443" duration="9566000" />
+      <workItem from="1607640550443" duration="11201000" />
     </task>
     <servers />
   </component>
@@ -171,30 +182,34 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1158" height="563" key="GridCell.Tab.0.bottom" timestamp="1607657316327">
+    <state width="1158" height="563" key="GridCell.Tab.0.bottom" timestamp="1607658943689">
       <screen x="1440" y="-757" width="1200" height="1895" />
     </state>
     <state width="1158" height="581" key="GridCell.Tab.0.bottom/0.0.1440.900/2640.-782.1200.1920/1440.-782.1200.1920@1440.-782.1200.1920" timestamp="1607641515103" />
-    <state width="1158" height="563" key="GridCell.Tab.0.bottom/0.25.1440.798/2640.-757.1200.1895/1440.-757.1200.1895@1440.-757.1200.1895" timestamp="1607657316327" />
+    <state width="1158" height="563" key="GridCell.Tab.0.bottom/0.25.1440.798/2640.-757.1200.1895/1440.-757.1200.1895@1440.-757.1200.1895" timestamp="1607657415855" />
     <state width="1158" height="581" key="GridCell.Tab.0.bottom/0.25.1440.798/2640.-757.1200.1895/1440.-782.1200.1920@1440.-782.1200.1920" timestamp="1607641379864" />
-    <state width="1158" height="563" key="GridCell.Tab.0.center" timestamp="1607657316326">
+    <state width="1158" height="563" key="GridCell.Tab.0.bottom/0.25.1440.875/2640.-757.1200.1895/1440.-757.1200.1895@1440.-757.1200.1895" timestamp="1607658943689" />
+    <state width="1158" height="563" key="GridCell.Tab.0.center" timestamp="1607658943688">
       <screen x="1440" y="-757" width="1200" height="1895" />
     </state>
     <state width="1158" height="581" key="GridCell.Tab.0.center/0.0.1440.900/2640.-782.1200.1920/1440.-782.1200.1920@1440.-782.1200.1920" timestamp="1607641515101" />
-    <state width="1158" height="563" key="GridCell.Tab.0.center/0.25.1440.798/2640.-757.1200.1895/1440.-757.1200.1895@1440.-757.1200.1895" timestamp="1607657316326" />
+    <state width="1158" height="563" key="GridCell.Tab.0.center/0.25.1440.798/2640.-757.1200.1895/1440.-757.1200.1895@1440.-757.1200.1895" timestamp="1607657415853" />
     <state width="1158" height="581" key="GridCell.Tab.0.center/0.25.1440.798/2640.-757.1200.1895/1440.-782.1200.1920@1440.-782.1200.1920" timestamp="1607641379862" />
-    <state width="1158" height="563" key="GridCell.Tab.0.left" timestamp="1607657316325">
+    <state width="1158" height="563" key="GridCell.Tab.0.center/0.25.1440.875/2640.-757.1200.1895/1440.-757.1200.1895@1440.-757.1200.1895" timestamp="1607658943688" />
+    <state width="1158" height="563" key="GridCell.Tab.0.left" timestamp="1607658943687">
       <screen x="1440" y="-757" width="1200" height="1895" />
     </state>
     <state width="1158" height="581" key="GridCell.Tab.0.left/0.0.1440.900/2640.-782.1200.1920/1440.-782.1200.1920@1440.-782.1200.1920" timestamp="1607641515100" />
-    <state width="1158" height="563" key="GridCell.Tab.0.left/0.25.1440.798/2640.-757.1200.1895/1440.-757.1200.1895@1440.-757.1200.1895" timestamp="1607657316325" />
+    <state width="1158" height="563" key="GridCell.Tab.0.left/0.25.1440.798/2640.-757.1200.1895/1440.-757.1200.1895@1440.-757.1200.1895" timestamp="1607657415853" />
     <state width="1158" height="581" key="GridCell.Tab.0.left/0.25.1440.798/2640.-757.1200.1895/1440.-782.1200.1920@1440.-782.1200.1920" timestamp="1607641379861" />
-    <state width="1158" height="563" key="GridCell.Tab.0.right" timestamp="1607657316326">
+    <state width="1158" height="563" key="GridCell.Tab.0.left/0.25.1440.875/2640.-757.1200.1895/1440.-757.1200.1895@1440.-757.1200.1895" timestamp="1607658943687" />
+    <state width="1158" height="563" key="GridCell.Tab.0.right" timestamp="1607658943688">
       <screen x="1440" y="-757" width="1200" height="1895" />
     </state>
     <state width="1158" height="581" key="GridCell.Tab.0.right/0.0.1440.900/2640.-782.1200.1920/1440.-782.1200.1920@1440.-782.1200.1920" timestamp="1607641515102" />
-    <state width="1158" height="563" key="GridCell.Tab.0.right/0.25.1440.798/2640.-757.1200.1895/1440.-757.1200.1895@1440.-757.1200.1895" timestamp="1607657316326" />
+    <state width="1158" height="563" key="GridCell.Tab.0.right/0.25.1440.798/2640.-757.1200.1895/1440.-757.1200.1895@1440.-757.1200.1895" timestamp="1607657415854" />
     <state width="1158" height="581" key="GridCell.Tab.0.right/0.25.1440.798/2640.-757.1200.1895/1440.-782.1200.1920@1440.-782.1200.1920" timestamp="1607641379863" />
+    <state width="1158" height="563" key="GridCell.Tab.0.right/0.25.1440.875/2640.-757.1200.1895/1440.-757.1200.1895@1440.-757.1200.1895" timestamp="1607658943688" />
     <state width="1158" height="716" key="GridCell.Tab.1.bottom" timestamp="1607657084436">
       <screen x="1440" y="-757" width="1200" height="1895" />
     </state>

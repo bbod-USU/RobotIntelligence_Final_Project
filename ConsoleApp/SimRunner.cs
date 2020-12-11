@@ -6,7 +6,7 @@ namespace ConsoleApp
     {
         private IMapFactory _mapFactory;
 
-        public SimRunner(IMapFactory mapFactory)
+        public SimRunner(IMapFactory mapFactory, IVehicle vehicle)
         {
             _mapFactory = mapFactory;
         }
