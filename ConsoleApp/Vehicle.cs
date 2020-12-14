@@ -1,4 +1,5 @@
 using System;
+using ConsoleApp.Maps;
 
 namespace ConsoleApp
 {
@@ -9,6 +10,12 @@ namespace ConsoleApp
 
         public int DetectorOffset { get;}
         public int DetectorWidth { get;}
+        public ICell CurrentHexCell { get; set; }
+        public Heading HexHeading { get; set; }
+        public Heading SquareHeading { get; set; }
+        public ICell CurrentSquareCell { get; set; }
+        
+
         
         public Vehicle(IJsonDeserializor jsonDeserializor)
         {
@@ -17,8 +24,10 @@ namespace ConsoleApp
             Width = config.Width;
             DetectorWidth = config.DetectorWidth;
             DetectorOffset = config.DetectorOffset;
+            CurrentHexCell = default;
+            CurrentSquareCell = default;
+            HexHeading = default;
+            SquareHeading = default;
         }
-
-
     }
 }

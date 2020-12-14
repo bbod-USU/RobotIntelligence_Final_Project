@@ -8,6 +8,7 @@ namespace ConsoleApp.Maps
         private int _defaultWidth;
         public int Height { get; protected set; }
         public int Width { get; protected set; }
+        public int CellWidth { get; protected set; }
 
         public Dictionary<string, IMap> Maps { get; }
 
@@ -20,8 +21,9 @@ namespace ConsoleApp.Maps
             Maps.Add("HexMap", new HexMap(x, y));
         }
 
-        public MapFactory()
+        public MapFactory(IVehicle vehicle)
         {
+            CellWidth = vehicle.Width/2;
             _defaultHeight = 0;
             _defaultWidth = 0;
             Height = _defaultHeight;
