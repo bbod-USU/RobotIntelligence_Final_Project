@@ -18,19 +18,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dafcaeb7-80aa-43a3-a480-786fafb78c0b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/Vehicle/DetectionHead.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/IVehicle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/IVehicle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/ConsoleApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/ConsoleApp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/IVehicle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Vehicle/IVehicle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/HexMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/HexMap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/IHexMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/IHexMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/IMap.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/IMapFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/IMapFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/ISquareMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/ISquareMap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/MapFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/MapFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/SquareMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/SquareMap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/PathPlanners/IPathPlanner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/PathPlanners/IPathPlanner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/PathPlanners/PathPlanner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/PathPlanners/PathPlanner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Vehicle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Vehicle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Vehicle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Vehicle/Vehicle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/VehicleConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Vehicle/VehicleConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/VehicleConfiguration.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Vehicle/VehicleConfiguration.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,15 +81,21 @@
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/MapFactory.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/IMapFactory.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/IVehicle.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/Vehicle.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/PathPlanners/IPathPlanner.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/IMap.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/PathPlanners/PathPlanner.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/Maps/ISquareMap.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/UserConsole.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Program.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Vehicle.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/Maps/SquareMap.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/Maps/HexMap.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/PathPlanners/IPathPlanner.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/IHexMap.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Maps/HexMap.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Maps/SquareMap.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Maps/ISquareMap.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Vehicle/DetectionHead.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Vehicle/Vehicle.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Vehicle/VehicleConfiguration.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Vehicle/IVehicle.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/PathPlanners/PathPlanner.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lIZ7IfsUjzqV2Jb1obOFvGFAfp" />
@@ -163,7 +173,7 @@
       <workItem from="1607982179018" duration="634000" />
       <workItem from="1607983288378" duration="86000" />
       <workItem from="1607983862958" duration="7777000" />
-      <workItem from="1607993290571" duration="16131000" />
+      <workItem from="1607993290571" duration="28469000" />
     </task>
     <servers />
   </component>
@@ -195,13 +205,26 @@
           <line>34</line>
           <properties documentPath="$PROJECT_DIR$/ConsoleApp/PathPlanner.cs" initialLine="34" containingFunctionPresentation="method 'GenerateOptimalSquarePath'">
             <startOffsets>
-              <option value="1466" />
+              <option value="1512" />
             </startOffsets>
             <endOffsets>
-              <option value="1482" />
+              <option value="1528" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ConsoleApp/PathPlanners/PathPlanner.cs</url>
+          <line>61</line>
+          <properties documentPath="$PROJECT_DIR$/ConsoleApp/PathPlanners/PathPlanner.cs" initialLine="62" containingFunctionPresentation="method 'GenerateOptimalHexPath'">
+            <startOffsets>
+              <option value="2509" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2530" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using ConsoleApp.Maps;
+using ConsoleApp.Vehicle;
+using HexCore;
 
 namespace ConsoleApp.PathPlanners
 {
@@ -11,7 +13,7 @@ namespace ConsoleApp.PathPlanners
             var path = new Queue<ICell>();
             var myCell = map.StartingCell;
             var finished = false;
-            var width_cm = (double)(vehicle.DetectorWidth) * 100;
+            var width_cm = (double)(vehicle.DetectorRadius) * 100 * 2;
             var swathOffset = (int)Math.Floor((decimal) (width_cm) / 25) + 1;
             var currentHeading = GlobalDirection.North;
             while (!finished)
@@ -53,8 +55,11 @@ namespace ConsoleApp.PathPlanners
             return path;
         }
         
-        public Queue<ICell> GenerateOptimalHexPath(HexMap hexMap, IVehicle vehicle)
+        public Queue<ICell> GenerateOptimalHexPath(IHexMap hexMap, IVehicle vehicle)
         {
+            // var t = hexMap.Graph.GetMovementRange(
+            //     new Coordinate2D(0, 0, hexMap.OffsetType), 2, hexMap.DefaultMovement);
+            // Console.WriteLine(t);
             throw new NotImplementedException();
         }
     }

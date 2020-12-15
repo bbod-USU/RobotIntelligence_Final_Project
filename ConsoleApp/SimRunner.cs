@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using ConsoleApp.Maps;
 using ConsoleApp.PathPlanners;
+using ConsoleApp.Vehicle;
 using HexCore;
 
 namespace ConsoleApp
@@ -39,7 +40,7 @@ namespace ConsoleApp
         {
             var hexMap = _mapFactory.GetHexMap();
             _vehicle.CurrentHexCell = new Coordinate2D(0, 0, OffsetTypes.OddRowsRight);
-            //var optimalPath = _pathPlanner.GenerateOptimalHexPath(hexMap, _vehicle);
+            var optimalPath = _pathPlanner.GenerateOptimalHexPath(hexMap, _vehicle);
         }
         
 

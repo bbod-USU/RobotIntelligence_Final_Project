@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using HexCore;
+using ImTools;
 
 namespace ConsoleApp.Maps
 {
@@ -12,6 +14,10 @@ namespace ConsoleApp.Maps
         public int Height { get; }
 
         public Graph Graph { get; }
+        
+        public OffsetTypes OffsetType { get; }
+        public MovementType DefaultMovement { get; }
+
 
         /// <summary>
         /// Generate Hex map with cells of 25cm X 25cm
@@ -20,6 +26,8 @@ namespace ConsoleApp.Maps
         /// <param name="y"></param>
         public HexMap(int x, int y)
         {
+            //Set Offset Type for 2d -> 3d conversion
+            OffsetType = OffsetTypes.OddRowsRight;
             //convert to cm
             x *= 100;
             y *= 100;
@@ -34,12 +42,12 @@ namespace ConsoleApp.Maps
             var unclearedTerrain = new TerrainType(1, "uncleared");
             var clearedTerrain = new TerrainType(2, "cleared");
             
-            var movement = new MovementType(1, "default");
+            DefaultMovement = new MovementType(1, "default");
             var movementTypes = new MovementTypes(
                 new ITerrainType[] { unclearedTerrain, clearedTerrain }, 
                 new Dictionary<IMovementType, Dictionary<ITerrainType, int>>
                 {
-                    [movement] = new Dictionary<ITerrainType, int>
+                    [DefaultMovement] = new Dictionary<ITerrainType, int>
                     {
                         [unclearedTerrain] = 1,
                         [clearedTerrain] = 2
@@ -49,5 +57,6 @@ namespace ConsoleApp.Maps
             Graph = GraphFactory.CreateRectangularGraph(Width, Height, movementTypes, unclearedTerrain);
         }
 
+       
     }
 }

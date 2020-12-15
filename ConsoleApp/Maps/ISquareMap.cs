@@ -12,5 +12,6 @@ namespace ConsoleApp.Maps
         Cell GetCell(int x, int y);
         int Height { get; }
         int Width { get; }
+        List<Cell> GetRange(Cell centerCell, int radius);
     }
 }

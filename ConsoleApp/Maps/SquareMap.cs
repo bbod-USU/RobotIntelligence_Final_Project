@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
-using HexCore;
-using ImTools;
+
 
 namespace ConsoleApp.Maps
 {
@@ -20,7 +19,6 @@ namespace ConsoleApp.Maps
         /// <param name="y"></param>
         public SquareMap(int x, int y)
         {
-            HexGraph = default;
             //convert to cm
             x *= 100;
             y *= 100;
@@ -63,8 +61,49 @@ namespace ConsoleApp.Maps
 
             return possibles;
         }
-        
-        public Graph HexGraph { get; }
+
+        public List<Cell> GetRange(Cell centerCell, int radius)
+        {
+            var inRange = new List<Cell>();
+            var cx = centerCell.X;
+            var cy = centerCell.Y;
+            var topLeft = GetTopCellInBoundingBox(cx, cy, radius);
+            var bottomRight = GetBottomCellInBoundingBox(cx, cy, radius);
+            for (var i = topLeft.X; i < bottomRight.X; i++)
+            {
+                for (var j = bottomRight.Y; j < topLeft.Y; j++)
+                {
+                    if (Math.Pow(i - cx, 2) + Math.Pow(j - cy, 2) < Math.Pow(radius,2))
+                    {
+                        inRange.Add(Map[i,j]);
+                    }
+                }
+            }
+            return inRange;
+        }
+
+        private Cell GetTopCellInBoundingBox(int cx, int cy, int radius)
+        {
+            int topX, topY;
+            if (cy + radius > Height) topY = Height;
+            else
+                topY = cy + radius;
+            if (cx - radius < 0) topX = 0;
+            else
+                topX = cx - radius;
+            return Map[topX, topY];
+        }
+        private Cell GetBottomCellInBoundingBox(int cx, int cy, int radius)
+        {
+            int bottomX, bottomY;
+            if (cy - radius > 0) bottomY = 0;
+            else
+                bottomY = cy - radius;
+            if (cx + radius < Width) bottomX = Width;
+            else
+                bottomX = cx + radius;
+            return Map[bottomX, bottomY];
+        }
 
         public Cell GetCell(int x, int y) => Map[x, y];
 
