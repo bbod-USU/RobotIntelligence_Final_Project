@@ -18,24 +18,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dafcaeb7-80aa-43a3-a480-786fafb78c0b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/IPathPlanner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/Maps/GlobalDirection.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/PathPlanner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/ConsoleApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/ConsoleApp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/IVehicle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/IVehicle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/Direction.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/Heading.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/Heading.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/HexCell.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/HexMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/HexMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/IHexCell.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/IMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/IMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/IMapFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/IMapFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/ISquareCell.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/MapFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/MapFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/SquareCell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/Cell.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/SquareMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/SquareMap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Vehicle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Vehicle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RobotIntelFinal.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/RobotIntelFinal.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,11 +47,29 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8B2EA1A3-95EB-49F7-AF97-CA55CE776F10/4/Container.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/Heading.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Maps/Direction.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Maps/GlobalDirection.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Maps/IMap.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/IPathPlanner.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Maps/HexMap.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Maps/SquareMap.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/PathPlanner.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lIZ7IfsUjzqV2Jb1obOFvGFAfp" />
@@ -74,14 +86,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="SolutionBuilderGeneralOptionsPageId" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Project.ConsoleApp">
     <configuration name="ConsoleApp" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/ConsoleApp/bin/Debug/netcoreapp3.1/ConsoleApp.dll" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ConsoleApp/bin/Debug/netcoreapp3.1" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
@@ -91,7 +104,7 @@
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="DotNetCore" />
-      <option name="PROJECT_TFM" value="" />
+      <option name="PROJECT_TFM" value=".NETCoreApp,Version=v3.1" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -114,6 +127,10 @@
         <option name="Build" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue=".NET Project.ConsoleApp" />
+      <item itemvalue=".NET Project.Simulator" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -129,7 +146,8 @@
       <workItem from="1607640550443" duration="19992000" />
       <workItem from="1607982179018" duration="634000" />
       <workItem from="1607983288378" duration="86000" />
-      <workItem from="1607983862958" duration="1794000" />
+      <workItem from="1607983862958" duration="7777000" />
+      <workItem from="1607993290571" duration="1876000" />
     </task>
     <servers />
   </component>
@@ -152,5 +170,50 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ConsoleApp/SimRunner.cs</url>
+          <line>49</line>
+          <properties documentPath="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" initialLine="49" containingFunctionPresentation="method 'SquareSimulation'">
+            <startOffsets>
+              <option value="1400" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1427" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ConsoleApp/SimRunner.cs</url>
+          <line>47</line>
+          <properties documentPath="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" initialLine="47" containingFunctionPresentation="method 'SquareSimulation'">
+            <startOffsets>
+              <option value="1340" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1369" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ConsoleApp/PathPlanner.cs</url>
+          <line>34</line>
+          <properties documentPath="$PROJECT_DIR$/ConsoleApp/PathPlanner.cs" initialLine="34" containingFunctionPresentation="method 'GenerateOptimalSquarePath'">
+            <startOffsets>
+              <option value="1420" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1436" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

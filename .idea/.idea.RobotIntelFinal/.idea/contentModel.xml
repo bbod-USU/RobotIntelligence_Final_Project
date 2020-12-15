@@ -9,13 +9,14 @@
         <e p="CoreModule.cs" t="Include" />
         <e p="IJsonDeserializor.cs" t="Include" />
         <e p="IModule.cs" t="Include" />
+        <e p="IPathPlanner.cs" t="Include" />
         <e p="ISimRunner.cs" t="Include" />
         <e p="IUserConsole.cs" t="Include" />
         <e p="IVehicle.cs" t="Include" />
         <e p="JsonDeserializor.cs" t="Include" />
         <e p="Maps" t="Include">
           <e p="Cell.cs" t="Include" />
-          <e p="Direction.cs" t="Include" />
+          <e p="GlobalDirection.cs" t="Include" />
           <e p="Heading.cs" t="Include" />
           <e p="HexMap.cs" t="Include" />
           <e p="ICell.cs" t="Include" />
@@ -27,12 +28,13 @@
           <e p="SquareMap.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
-          <e p="Release" t="Include">
+          <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
               <e p="ConsoleApp.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
+        <e p="PathPlanner.cs" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="SimRunner.cs" t="Include" />
         <e p="UserConsole.cs" t="Include" />
@@ -43,6 +45,7 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="RobotIntelFinal.sln" t="IncludeFlat" />
     </e>
+    <e p="$APPLICATION_CONFIG_DIR$/consoles/ide" t="IncludeRecursive" />
     <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.3/extResources" t="IncludeRecursive" />
     <e p="$USER_HOME$/Library/Caches/JetBrains/Rider2020.3/resharper-host/local/Transient/Rider/v203/SolutionCaches/_RobotIntelFinal.-1349721189.00" t="ExcludeRecursive" />
   </component>

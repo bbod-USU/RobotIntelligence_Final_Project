@@ -10,58 +10,42 @@ namespace ConsoleApp
     {
         private IMapFactory _mapFactory;
         private IVehicle _vehicle;
-        private IMap _squareMap;
-        private IMap _hexMap;
+
         private int _cellWidth;
+        private IPathPlanner _pathPlanner;
 
 
-        public SimRunner(IMapFactory mapFactory, IVehicle vehicle)
+        public SimRunner(IMapFactory mapFactory, IVehicle vehicle, IPathPlanner pathPlanner)
         {
-            _squareMap = mapFactory.Maps["SquareMap"];
-            _hexMap = mapFactory.Maps["HexMap"];
+           
             _cellWidth = mapFactory.CellWidth;
             _mapFactory = mapFactory;
             _vehicle = vehicle;
+            _pathPlanner = pathPlanner;
         }
 
         public void Run()
         {
-            _vehicle.CurrentHexCell = _hexMap.StartingCell;
-            _vehicle.CurrentSquareCell = _squareMap.StartingCell;
-            var squareTask = Task.Run(() => SquareSimulation());
-            var hexTask = Task.Run(() => HexSimulation());
-            while(!squareTask.IsCompleted && !hexTask.IsCompleted){Thread.Sleep(500);}
-           
+
+            SquareSimulation();
+            // var hexTask = Task.Run(() => HexSimulation());
+            // while(!squareTask.IsCompleted && !hexTask.IsCompleted){Thread.Sleep(500);}
+
         }
 
         private void HexSimulation()
         {
-            
-            var optimalPath = GenerateHexPath();
+            var hexMap = (HexMap)_mapFactory.Maps["HexMap"];
+            _vehicle.CurrentHexCell = hexMap.StartingCell;
         }
         
 
         private void SquareSimulation()
         {
-            var optimalPath = GenerateSquarePath();
+            var squareMap = (SquareMap)_mapFactory.Maps["SquareMap"];
+            _vehicle.CurrentSquareCell = squareMap.StartingCell;
+            var optimalPath = _pathPlanner.GenerateOptimalSquarePath(squareMap, _vehicle);
         }
 
-        private object GenerateSquarePath()
-        {
-            throw new NotImplementedException();
-        }
-
-        private Queue<ICell> GenerateHexPath()
-        {
-            var path = new Queue<ICell>();
-            var currentCell = _vehicle.CurrentHexCell;
-            var possibles = _hexMap.PossibleMoves(currentCell);
-            while (currentCell != _hexMap.LastCell)
-            {
-                
-            }
-
-            return path;
-        }
     }
 }

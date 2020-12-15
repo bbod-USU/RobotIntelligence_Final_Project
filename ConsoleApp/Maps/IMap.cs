@@ -6,8 +6,8 @@ namespace ConsoleApp.Maps
     public interface IMap
     {
         public Cell[,] Map { get; }
-        ICell StartingCell { get; }
-        ICell LastCell { get; }
-        public List<ICell> PossibleMoves(ICell currentCell);
+        Cell StartingCell { get; }
+        Cell LastCell { get; }
+        public List<GlobalDirection> PossibleMoves(ICell currentCell);
     }
 }

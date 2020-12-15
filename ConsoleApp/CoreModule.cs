@@ -13,6 +13,7 @@ namespace ConsoleApp
             container.Register<ISimRunner, SimRunner>(Reuse.Singleton);
             container.Register<IVehicle, Vehicle>(Reuse.Singleton);
             container.Register<IJsonDeserializor, JsonDeserializor>(Reuse.Singleton);
+            container.Register<IPathPlanner, PathPlanner>(Reuse.Singleton);
         }
         
 

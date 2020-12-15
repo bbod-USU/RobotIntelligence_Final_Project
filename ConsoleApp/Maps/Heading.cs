@@ -1,5 +1,3 @@
-using System.Net.NetworkInformation;
-
 namespace ConsoleApp.Maps
 {
     public class Oreientation

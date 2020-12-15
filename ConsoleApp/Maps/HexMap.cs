@@ -6,8 +6,8 @@ namespace ConsoleApp.Maps
     public class HexMap : IHexMap
     {
         public Cell[,] Map { get; }
-        public ICell StartingCell { get; }
-        public ICell LastCell { get; }
+        public Cell StartingCell { get; }
+        public Cell LastCell { get; }
 
         /// <summary>
         /// Generate Hex map with cells of 25cm X 25cm
@@ -23,9 +23,11 @@ namespace ConsoleApp.Maps
             var xCellCount = (int)Math.Ceiling((decimal) (x) / 25);
             var yCellCount = (int)Math.Ceiling((decimal) (y) / 25);
             
+            //Initialize Map
+            Map = new Cell[xCellCount, yCellCount];
+
             //set last cell;
             StartingCell = Map[0, 0];
-            Map = new Cell[xCellCount, yCellCount];
             for (int r = 0; r < yCellCount; r++) {
                 int r_offset = Convert.ToInt32(Math.Floor(Convert.ToDouble(r)/2));
                 for (int q = r_offset; q < xCellCount - r_offset; q++) {
@@ -35,7 +37,7 @@ namespace ConsoleApp.Maps
             }
         }
 
-        public List<ICell> PossibleMoves(ICell currentCell)
+        public List<GlobalDirection> PossibleMoves(ICell currentCell)
         {
             throw new NotImplementedException();
         }

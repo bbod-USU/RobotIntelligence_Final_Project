@@ -1,7 +1,10 @@
 namespace ConsoleApp.Maps
 {
-    public enum Direction
+    public enum GlobalDirection
     {
-        
+        North,
+        South,
+        East,
+        West
     }
 }
