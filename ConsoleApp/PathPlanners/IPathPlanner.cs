@@ -5,7 +5,7 @@ namespace ConsoleApp.PathPlanners
 {
     public interface IPathPlanner
     {
-        Queue<ICell> GenerateOptimalSquarePath(SquareMap map, IVehicle vehicle);
+        Queue<ICell> GenerateOptimalSquarePath(ISquareMap map, IVehicle vehicle);
         Queue<ICell> GenerateOptimalHexPath(HexMap hexMap, IVehicle vehicle);
     }
     

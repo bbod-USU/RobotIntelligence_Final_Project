@@ -6,12 +6,12 @@ namespace ConsoleApp.Maps
 {
     public class HexMap : IHexMap
     {
-        private int _mapHeight;
-        private int _mapWidth;
-        public Cell[,] Map { get; }
-        public Cell StartingCell { get; }
-        public Cell LastCell { get; }
-        public Graph HexGraph { get; }
+
+        public int Width { get; }
+
+        public int Height { get; }
+
+        public Graph Graph { get; }
 
         /// <summary>
         /// Generate Hex map with cells of 25cm X 25cm
@@ -28,25 +28,12 @@ namespace ConsoleApp.Maps
             var xCellCount = (int)Math.Ceiling((decimal) (x) / 25);
             var yCellCount = (int)Math.Ceiling((decimal) (y) / 25);
 
-            _mapHeight = yCellCount;
-            _mapWidth = xCellCount;
+            Height = yCellCount;
+            Width = xCellCount;
             
-            //Initialize Map
-            Map = new Cell[xCellCount, yCellCount];
-            //set Starting cell;
-            StartingCell = Map[0, 0];
-
             var unclearedTerrain = new TerrainType(1, "uncleared");
             var clearedTerrain = new TerrainType(2, "cleared");
-            //Populate Map
-            var list = new List<CellState>();
-            for (int i = 0; i < _mapHeight; i++)
-            {
-                for (int j = 0; j < _mapWidth; j++)
-                {
-                    list.Add(new CellState(false, new Coordinate2D(i, j, OffsetTypes.OddRowsRight), unclearedTerrain));
-                }
-            }
+            
             var movement = new MovementType(1, "default");
             var movementTypes = new MovementTypes(
                 new ITerrainType[] { unclearedTerrain, clearedTerrain }, 
@@ -59,24 +46,8 @@ namespace ConsoleApp.Maps
                     }
                 }
             );
-            HexGraph = GraphFactory.CreateRectangularGraph(_mapWidth, _mapHeight, movementTypes, unclearedTerrain);
+            Graph = GraphFactory.CreateRectangularGraph(Width, Height, movementTypes, unclearedTerrain);
         }
 
-        public List<GlobalDirection> PossibleMoves(ICell currentCell)
-        {
-            var x = currentCell.X;
-            var y = currentCell.Y;
-            var possibles = new List<GlobalDirection>();
-            
-            if(currentCell.Y != _mapHeight)
-                possibles.Add(GlobalDirection.North);
-            
-            if(currentCell.Y != 0)
-                possibles.Add(GlobalDirection.South);
-            
-            if(currentCell.X != _mapWidth && currentCell.Y != _mapHeight)
-                possibles.Add(GlobalDirection.NorthEast);
-            return possibles;
-        }
     }
 }

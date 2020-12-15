@@ -1,7 +1,9 @@
+using HexCore;
+
 namespace ConsoleApp.Maps
 {
-    public interface IHexMap : IMap
+    public interface IHexMap
     {
-        
+        Graph Graph { get; }
     }
 }

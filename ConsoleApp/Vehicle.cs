@@ -10,7 +10,7 @@ namespace ConsoleApp
 
         public int DetectorOffset { get;}
         public int DetectorWidth { get;}
-        public ICell CurrentHexCell { get; set; }
+        public HexCore.Coordinate2D CurrentHexCell { get; set; }
         public Heading HexHeading { get; set; }
         public Heading SquareHeading { get; set; }
         public ICell CurrentSquareCell { get; set; }

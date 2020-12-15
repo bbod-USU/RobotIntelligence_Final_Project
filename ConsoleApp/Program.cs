@@ -13,6 +13,7 @@ namespace ConsoleApp
             _bootstrapper = BootStrapper.BootstrapSystem(new CoreModule());
             _userConsole = new UserConsole();
             Initialization();
+            Console.WriteLine("Program Completed");
         }
 
         private static void Initialization()

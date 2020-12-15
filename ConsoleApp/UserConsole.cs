@@ -7,8 +7,6 @@ namespace ConsoleApp
 {
     public class UserConsole : IUserConsole
     {
-        private IMapFactory _mapFactory;
-
         public UserConsole()
         {
         }

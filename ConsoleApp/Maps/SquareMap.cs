@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using HexCore;
+using ImTools;
 
 namespace ConsoleApp.Maps
 {
@@ -12,9 +13,11 @@ namespace ConsoleApp.Maps
         public int Height { get; }
         public int Width { get; }
 
-
-        private int _mapWidth;
-        private int _mapHeight;
+        /// <summary>
+        /// Returns a map with square cells
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
         public SquareMap(int x, int y)
         {
             HexGraph = default;
@@ -25,11 +28,10 @@ namespace ConsoleApp.Maps
             var xCellCount = (int)Math.Ceiling((decimal) (x) / 25);
             var yCellCount = (int)Math.Ceiling((decimal) (y) / 25);
             
-            //set Width and height fields and Properties
-            _mapWidth = xCellCount-1;
-            _mapHeight = yCellCount-1;
-            Height = _mapHeight;
-            Width = _mapWidth;
+            //set Width and height Properties
+            Width = xCellCount-1;
+            Height = yCellCount-1;
+
             
             //Initialize Map
             Map = new Cell[xCellCount, yCellCount];
@@ -52,18 +54,19 @@ namespace ConsoleApp.Maps
             var possibles = new List<GlobalDirection>();
             if (currentCell.X != 0)
                 possibles.Add(GlobalDirection.West);
-            if (currentCell.X != _mapWidth)
+            if (currentCell.X != Width)
                 possibles.Add(GlobalDirection.East);
-            if (currentCell.Y != _mapHeight)
+            if (currentCell.Y != Height)
                 possibles.Add(GlobalDirection.North);
             if (currentCell.Y != 0)
                 possibles.Add(GlobalDirection.South);
 
             return possibles;
         }
-
+        
         public Graph HexGraph { get; }
 
-        public Cell this[in int x, in int y] => Map[x, y];
+        public Cell GetCell(int x, int y) => Map[x, y];
+
     }
 }

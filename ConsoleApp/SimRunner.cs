@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using ConsoleApp.Maps;
 using ConsoleApp.PathPlanners;
+using HexCore;
 
 namespace ConsoleApp
 {
@@ -28,7 +29,7 @@ namespace ConsoleApp
         public void Run()
         {
 
-            //SquareSimulation();
+            SquareSimulation();
             HexSimulation();
             // while(!squareTask.IsCompleted && !hexTask.IsCompleted){Thread.Sleep(500);}
 
@@ -36,15 +37,15 @@ namespace ConsoleApp
 
         private void HexSimulation()
         {
-            var hexMap = (HexMap)_mapFactory.Maps["HexMap"];
-            _vehicle.CurrentHexCell = hexMap.StartingCell;
-            var optimalPath = _pathPlanner.GenerateOptimalHexPath(hexMap, _vehicle);
+            var hexMap = _mapFactory.GetHexMap();
+            _vehicle.CurrentHexCell = new Coordinate2D(0, 0, OffsetTypes.OddRowsRight);
+            //var optimalPath = _pathPlanner.GenerateOptimalHexPath(hexMap, _vehicle);
         }
         
 
         private void SquareSimulation()
         {
-            var squareMap = (SquareMap)_mapFactory.Maps["SquareMap"];
+            var squareMap = _mapFactory.GetSquareMap();
             _vehicle.CurrentSquareCell = squareMap.StartingCell;
             var optimalPath = _pathPlanner.GenerateOptimalSquarePath(squareMap, _vehicle);
         }

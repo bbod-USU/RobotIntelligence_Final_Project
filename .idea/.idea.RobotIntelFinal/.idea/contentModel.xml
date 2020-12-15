@@ -20,7 +20,6 @@
           <e p="HexMap.cs" t="Include" />
           <e p="ICell.cs" t="Include" />
           <e p="IHexMap.cs" t="Include" />
-          <e p="IMap.cs" t="Include" />
           <e p="IMapFactory.cs" t="Include" />
           <e p="ISquareMap.cs" t="Include" />
           <e p="MapFactory.cs" t="Include" />
