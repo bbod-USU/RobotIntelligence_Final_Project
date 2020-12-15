@@ -15,6 +15,7 @@
 
     <ItemGroup>
       <PackageReference Include="DryIoc.dll" Version="4.5.2" />
+      <PackageReference Include="HexCore" Version="4.1.0" />
     </ItemGroup>
 
     <ItemGroup>

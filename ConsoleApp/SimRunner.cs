@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using ConsoleApp.Maps;
+using ConsoleApp.PathPlanners;
 
 namespace ConsoleApp
 {
@@ -27,8 +28,8 @@ namespace ConsoleApp
         public void Run()
         {
 
-            SquareSimulation();
-            // var hexTask = Task.Run(() => HexSimulation());
+            //SquareSimulation();
+            HexSimulation();
             // while(!squareTask.IsCompleted && !hexTask.IsCompleted){Thread.Sleep(500);}
 
         }
@@ -37,6 +38,7 @@ namespace ConsoleApp
         {
             var hexMap = (HexMap)_mapFactory.Maps["HexMap"];
             _vehicle.CurrentHexCell = hexMap.StartingCell;
+            var optimalPath = _pathPlanner.GenerateOptimalHexPath(hexMap, _vehicle);
         }
         
 

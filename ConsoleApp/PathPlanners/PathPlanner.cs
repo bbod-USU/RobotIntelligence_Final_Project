@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using ConsoleApp.Maps;
 
-namespace ConsoleApp
+namespace ConsoleApp.PathPlanners
 {
     public class PathPlanner : IPathPlanner
     {
@@ -51,6 +51,11 @@ namespace ConsoleApp
             }
 
             return path;
+        }
+
+        public Queue<ICell> GenerateOptimalHexPath(HexMap hexMap, IVehicle vehicle)
+        {
+            throw new NotImplementedException();
         }
     }
 }

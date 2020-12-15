@@ -5,6 +5,10 @@ namespace ConsoleApp.Maps
         North,
         South,
         East,
-        West
+        West,
+        NorthEast,
+        SouthEast,
+        NorthWest,
+        SouthWest
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
+using HexCore;
 
 namespace ConsoleApp.Maps
 {
@@ -9,5 +10,7 @@ namespace ConsoleApp.Maps
         Cell StartingCell { get; }
         Cell LastCell { get; }
         public List<GlobalDirection> PossibleMoves(ICell currentCell);
+        
+        Graph HexGraph { get; }
     }
 }

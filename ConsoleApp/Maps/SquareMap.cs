@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using HexCore;
 
 namespace ConsoleApp.Maps
 {
@@ -16,6 +17,7 @@ namespace ConsoleApp.Maps
         private int _mapHeight;
         public SquareMap(int x, int y)
         {
+            HexGraph = default;
             //convert to cm
             x *= 100;
             y *= 100;
@@ -23,7 +25,7 @@ namespace ConsoleApp.Maps
             var xCellCount = (int)Math.Ceiling((decimal) (x) / 25);
             var yCellCount = (int)Math.Ceiling((decimal) (y) / 25);
             
-            //set Width and height fields
+            //set Width and height fields and Properties
             _mapWidth = xCellCount-1;
             _mapHeight = yCellCount-1;
             Height = _mapHeight;
@@ -59,6 +61,8 @@ namespace ConsoleApp.Maps
 
             return possibles;
         }
+
+        public Graph HexGraph { get; }
 
         public Cell this[in int x, in int y] => Map[x, y];
     }

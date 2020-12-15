@@ -9,7 +9,6 @@
         <e p="CoreModule.cs" t="Include" />
         <e p="IJsonDeserializor.cs" t="Include" />
         <e p="IModule.cs" t="Include" />
-        <e p="IPathPlanner.cs" t="Include" />
         <e p="ISimRunner.cs" t="Include" />
         <e p="IUserConsole.cs" t="Include" />
         <e p="IVehicle.cs" t="Include" />
@@ -34,7 +33,10 @@
             </e>
           </e>
         </e>
-        <e p="PathPlanner.cs" t="Include" />
+        <e p="PathPlanners" t="Include">
+          <e p="IPathPlanner.cs" t="Include" />
+          <e p="PathPlanner.cs" t="Include" />
+        </e>
         <e p="Program.cs" t="Include" />
         <e p="SimRunner.cs" t="Include" />
         <e p="UserConsole.cs" t="Include" />
