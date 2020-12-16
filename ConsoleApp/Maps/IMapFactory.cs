@@ -8,8 +8,9 @@ namespace ConsoleApp.Maps
         int Height { get; }
         int Width { get; }
         int CellWidth { get; }
-        void GenerateMaps(int x, int y);
+        void GenerateMaps(int x, int y, double minePercentage);
         IHexMap GetHexMap();
         ISquareMap GetSquareMap();
+        IMineMap GetMineMap();
     }
 }

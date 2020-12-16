@@ -1,6 +1,6 @@
 using ConsoleApp.Maps;
 
-namespace ConsoleApp.Vehicle
+namespace ConsoleApp.Sim
 {
     public interface IVehicle
     {

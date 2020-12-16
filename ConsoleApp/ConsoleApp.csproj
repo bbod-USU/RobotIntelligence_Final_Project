@@ -19,7 +19,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="Vehicle\VehicleConfiguration.json">
+      <None Update="Sim\VehicleConfiguration.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>

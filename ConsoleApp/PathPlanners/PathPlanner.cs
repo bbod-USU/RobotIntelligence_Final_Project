@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using ConsoleApp.Maps;
-using ConsoleApp.Vehicle;
+using ConsoleApp.Sim;
 using HexCore;
 
 namespace ConsoleApp.PathPlanners
@@ -55,12 +56,76 @@ namespace ConsoleApp.PathPlanners
             return path;
         }
         
-        public Queue<ICell> GenerateOptimalHexPath(IHexMap hexMap, IVehicle vehicle)
+        public Queue<Coordinate2D> GenerateOptimalHexPath(IHexMap hexMap, IVehicle vehicle)
         {
-            // var t = hexMap.Graph.GetMovementRange(
-            //     new Coordinate2D(0, 0, hexMap.OffsetType), 2, hexMap.DefaultMovement);
-            // Console.WriteLine(t);
-            throw new NotImplementedException();
+            var currentPostion = vehicle.CurrentHexCell;
+            var currentHeading = GlobalDirection.East;
+            var finished = false;
+            var path = new List<Coordinate2D>();
+            while (!finished)
+            {
+                if (currentHeading == GlobalDirection.East)
+                {
+                    path.AddRange(hexMap.Graph.GetShortestPath(
+                        currentPostion,
+                        new Coordinate2D(hexMap.Width, currentPostion.Y, hexMap.OffsetType),
+                        hexMap.DefaultMovement));
+                    currentPostion = new Coordinate2D(hexMap.Width, currentPostion.Y, hexMap.OffsetType);
+                }
+                
+                else if(currentHeading == GlobalDirection.West)
+                {
+                    path.AddRange(hexMap.Graph.GetShortestPath(
+                        currentPostion,
+                        new Coordinate2D(0, currentPostion.Y, hexMap.OffsetType),
+                        hexMap.DefaultMovement));
+                    currentPostion = new Coordinate2D(0, currentPostion.Y, hexMap.OffsetType);
+                    
+                }
+
+                if (currentPostion.Y + vehicle.DetectorRadius * 2 > hexMap.Height)
+                {
+                    finished = true;
+                    break;
+                }
+
+                Coordinate2D tmpPosition;
+                    if(currentHeading == GlobalDirection.East) 
+                        tmpPosition = new Coordinate3D(
+                            currentPostion.To3D().X-1, 
+                            currentPostion.To3D().Y,
+                            currentPostion.To3D().Z+1).To2D(hexMap.OffsetType);
+                    else
+                        tmpPosition = new Coordinate3D(
+                            currentPostion.To3D().X, 
+                            currentPostion.To3D().Y-1,
+                            currentPostion.To3D().Z+1).To2D(hexMap.OffsetType);
+                while (hexMap.Graph.GetRange(currentPostion, vehicle.DetectorRadius*2).Contains(tmpPosition))
+                {
+                    if(currentHeading == GlobalDirection.East) 
+                        tmpPosition = new Coordinate3D(
+                            tmpPosition.To3D().X-1, 
+                            tmpPosition.To3D().Y,
+                            tmpPosition.To3D().Z+1).To2D(hexMap.OffsetType);
+                    else
+                        tmpPosition = new Coordinate3D(
+                            tmpPosition.To3D().X, 
+                            tmpPosition.To3D().Y-1,
+                            tmpPosition.To3D().Z+1).To2D(hexMap.OffsetType);
+                }
+                path.AddRange(hexMap.Graph.GetShortestPath(
+                    currentPostion,
+                    tmpPosition,
+                    hexMap.DefaultMovement));
+                currentPostion = tmpPosition;
+                if (currentHeading == GlobalDirection.East)
+                    currentHeading = GlobalDirection.West;
+                else
+                    currentHeading = GlobalDirection.East;
+
+
+            }
+            return new Queue<Coordinate2D>(path);
         }
     }
 }

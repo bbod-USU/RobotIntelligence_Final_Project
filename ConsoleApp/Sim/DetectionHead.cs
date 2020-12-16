@@ -2,17 +2,17 @@ using System.Collections.Generic;
 using ConsoleApp.Maps;
 using HexCore;
 
-namespace ConsoleApp.Vehicle
+namespace ConsoleApp.Sim
 {
-    public class DetectionHead
+    public static class DetectionHead
     {
-        public List<Coordinate2D> GetCoveredCells(
+        public static List<Coordinate2D> GetCoveredCells(
             Graph graph,
             Coordinate2D centerCoordinate,
             int detectorRadius,
             GlobalDirection direction) => graph.GetRange(centerCoordinate, detectorRadius);
 
-        public List<Cell> GetCoveredCells(
+        public static List<Cell> GetCoveredCells(
             ISquareMap squareMap,
             Cell centerCell,
             int detectorRadius) => squareMap.GetRange(centerCell, detectorRadius);

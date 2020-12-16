@@ -20,8 +20,11 @@
           <e p="ICell.cs" t="Include" />
           <e p="IHexMap.cs" t="Include" />
           <e p="IMapFactory.cs" t="Include" />
+          <e p="IMineMap.cs" t="Include" />
           <e p="ISquareMap.cs" t="Include" />
+          <e p="MapExtensions.cs" t="Include" />
           <e p="MapFactory.cs" t="Include" />
+          <e p="MineMap.cs" t="Include" />
           <e p="SquareMap.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -33,18 +36,20 @@
         </e>
         <e p="PathPlanners" t="Include">
           <e p="IPathPlanner.cs" t="Include" />
+          <e p="IReactivePathPlanner.cs" t="Include" />
           <e p="PathPlanner.cs" t="Include" />
+          <e p="ReactivePathPlanner.cs" t="Include" />
         </e>
         <e p="Program.cs" t="Include" />
-        <e p="SimRunner.cs" t="Include" />
-        <e p="UserConsole.cs" t="Include" />
-        <e p="Vehicle" t="Include">
+        <e p="Sim" t="Include">
           <e p="DetectionHead.cs" t="Include" />
           <e p="IVehicle.cs" t="Include" />
           <e p="Vehicle.cs" t="Include" />
           <e p="VehicleConfiguration.cs" t="Include" />
           <e p="VehicleConfiguration.json" t="Include" />
         </e>
+        <e p="SimRunner.cs" t="Include" />
+        <e p="UserConsole.cs" t="Include" />
       </e>
       <e p="packages" t="ExcludeRecursive" />
       <e p="RobotIntelFinal.sln" t="IncludeFlat" />

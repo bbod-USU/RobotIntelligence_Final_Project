@@ -18,14 +18,11 @@ namespace ConsoleApp
                               $"\t 2: Load custom map. \n");
         }
 
-        public string GetUserInput() => Console.ReadLine();
+        public static string GetUserInput() => Console.ReadLine();
 
-        public void PrintInvalidInput()
-        {
-            Console.WriteLine($"Invalid input try again \n");
-        }
+        public static void PrintInvalidInput() => Console.WriteLine($"Invalid input try again \n");
 
-        public (int width, int height) GetMapDimensions()
+            public (int width, int height) GetMapDimensions()
         {
             Console.WriteLine($"Enter map height: ");
             var x = GetUserInput();
@@ -38,12 +35,23 @@ namespace ConsoleApp
 
             Console.WriteLine($"Enter map height: ");
             var y = GetUserInput();
-            if(!int.TryParse(y, out var height))
-            {
-                PrintInvalidInput();
-                GetMapDimensions();
-            }
+            if (int.TryParse(y, out var height)) return (width, height);
+            PrintInvalidInput();
+            GetMapDimensions();
             return (width, height);
+        }
+
+        public static double GetMinePercentage()
+        {
+            
+            Console.WriteLine($"Enter desired percentage of mines: ");
+            var x = GetUserInput();
+
+            if (double.TryParse(x, out var percent)) return percent;
+            PrintInvalidInput();
+            GetMinePercentage();
+
+            return percent;
         }
     }
 }

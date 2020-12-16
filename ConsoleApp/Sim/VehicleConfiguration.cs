@@ -1,4 +1,4 @@
-namespace ConsoleApp.Vehicle
+namespace ConsoleApp.Sim
 {
     public class VehicleConfiguration
     {

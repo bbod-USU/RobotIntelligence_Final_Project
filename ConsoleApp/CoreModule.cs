@@ -1,7 +1,6 @@
-using System.Text.Json;
-using System.Threading;
 using ConsoleApp.Maps;
 using ConsoleApp.PathPlanners;
+using ConsoleApp.Sim;
 using DryIoc;
 
 namespace ConsoleApp
@@ -15,6 +14,7 @@ namespace ConsoleApp
             container.Register<IVehicle, Vehicle>(Reuse.Singleton);
             container.Register<IJsonDeserializor, JsonDeserializor>(Reuse.Singleton);
             container.Register<IPathPlanner, PathPlanner>(Reuse.Singleton);
+            container.Register<IReactivePathPlanner, ReactivePathPlanner>(Reuse.Singleton);
         }
         
 

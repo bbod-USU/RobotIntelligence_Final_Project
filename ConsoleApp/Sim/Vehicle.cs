@@ -1,6 +1,6 @@
 using ConsoleApp.Maps;
 
-namespace ConsoleApp.Vehicle
+namespace ConsoleApp.Sim
 {
     public class Vehicle : IVehicle
     {
@@ -13,20 +13,19 @@ namespace ConsoleApp.Vehicle
         public Heading HexHeading { get; set; }
         public Heading SquareHeading { get; set; }
         public ICell CurrentSquareCell { get; set; }
-        public DetectionHead DetectionHead { get; }
+        
         
 
         
         public Vehicle(IJsonDeserializor jsonDeserializor)
         {
-            var config = jsonDeserializor.DeserializeObject<VehicleConfiguration>("/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Vehicle/VehicleConfiguration.json");
+            var config = jsonDeserializor.DeserializeObject<VehicleConfiguration>("/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Sim/VehicleConfiguration.json");
             Length = config.Length;
             Width = config.Width;
             DetectorRadius = config.DetectorRadius;
             DetectorOffset = config.DetectorOffset;
             CurrentHexCell = default;
             CurrentSquareCell = default;
-            DetectionHead = new DetectionHead();
         }
     }
 }
