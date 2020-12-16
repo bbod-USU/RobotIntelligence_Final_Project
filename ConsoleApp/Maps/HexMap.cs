@@ -17,6 +17,9 @@ namespace ConsoleApp.Maps
         
         public OffsetTypes OffsetType { get; }
         public MovementType DefaultMovement { get; }
+        public TerrainType ClearedTerrain { get; }
+
+        public TerrainType UnclearedTerrain { get; }
 
 
         /// <summary>
@@ -28,35 +31,28 @@ namespace ConsoleApp.Maps
         {
             //Set Offset Type for 2d -> 3d conversion
             OffsetType = OffsetTypes.OddRowsRight;
-            //convert to cm
-            x *= 100;
-            y *= 100;
-            
-            //calculate number of cells on x and y axis
-            var xCellCount = (int)Math.Ceiling((decimal) (x) / 25);
-            var yCellCount = (int)Math.Ceiling((decimal) (y) / 25);
 
-            Height = yCellCount;
-            Width = xCellCount;
+            Height = y;
+            Width = x;
             
-            var unclearedTerrain = new TerrainType(1, "uncleared");
-            var clearedTerrain = new TerrainType(2, "cleared");
+            UnclearedTerrain = new TerrainType(1, "uncleared");
+            ClearedTerrain = new TerrainType(2, "cleared");
             
             DefaultMovement = new MovementType(1, "default");
             var movementTypes = new MovementTypes(
-                new ITerrainType[] { unclearedTerrain, clearedTerrain }, 
+                new ITerrainType[] { UnclearedTerrain, ClearedTerrain }, 
                 new Dictionary<IMovementType, Dictionary<ITerrainType, int>>
                 {
                     [DefaultMovement] = new Dictionary<ITerrainType, int>
                     {
-                        [unclearedTerrain] = 1,
-                        [clearedTerrain] = 2
+                        [UnclearedTerrain] = 1,
+                        [ClearedTerrain] = 2
                     }
                 }
             );
-            Graph = GraphFactory.CreateRectangularGraph(Width, Height, movementTypes, unclearedTerrain);
+            Graph = GraphFactory.CreateRectangularGraph(Width, Height, movementTypes, UnclearedTerrain);
         }
 
-       
+
     }
 }

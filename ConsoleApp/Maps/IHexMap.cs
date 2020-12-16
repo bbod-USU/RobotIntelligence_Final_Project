@@ -9,5 +9,7 @@ namespace ConsoleApp.Maps
         int Width { get; }
         int Height { get; }
         MovementType DefaultMovement { get; }
+        public TerrainType ClearedTerrain { get; }
+        public TerrainType UnclearedTerrain { get; }
     }
 }

@@ -34,12 +34,19 @@
             </e>
           </e>
         </e>
+        <e p="Output" t="Include">
+          <e p="DetectedMines.txt" t="Include" />
+          <e p="Mines.txt" t="Include" />
+          <e p="SavedList.txt" t="Include" />
+          <e p="test.png" t="Include" />
+        </e>
         <e p="PathPlanners" t="Include">
           <e p="IPathPlanner.cs" t="Include" />
           <e p="IReactivePathPlanner.cs" t="Include" />
           <e p="PathPlanner.cs" t="Include" />
           <e p="ReactivePathPlanner.cs" t="Include" />
         </e>
+        <e p="plot.py" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Sim" t="Include">
           <e p="DetectionHead.cs" t="Include" />

@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO;
+using System.Reflection;
+using System.Threading;
 using ConsoleApp.Maps;
 
 namespace ConsoleApp
@@ -13,7 +17,31 @@ namespace ConsoleApp
             _bootstrapper = BootStrapper.BootstrapSystem(new CoreModule());
             _userConsole = new UserConsole();
             Initialization();
+            GenerateImages();
             Console.WriteLine("Program Completed");
+        }
+
+        private static void GenerateImages()
+        {
+            // var generateMap= "python3 ConsoleApp/plot.py";
+            // System.Diagnostics.Process.Start("CMD.exe",generateMap);
+            //
+            var file = Path.Combine("./",Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"plot.py");
+            ProcessStartInfo startInfo = new ProcessStartInfo()
+            {
+                FileName = "python3",
+                Arguments = file,
+                UseShellExecute = true
+            };
+            Process proc = new Process()
+            {
+                StartInfo = startInfo,
+            };
+            proc.Start();
+            while (!proc.HasExited)
+            {
+                Thread.Sleep(500);
+            }
         }
 
         private static void Initialization()

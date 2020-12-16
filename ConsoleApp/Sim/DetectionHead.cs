@@ -10,7 +10,16 @@ namespace ConsoleApp.Sim
             Graph graph,
             Coordinate2D centerCoordinate,
             int detectorRadius,
-            GlobalDirection direction) => graph.GetRange(centerCoordinate, detectorRadius);
+            int vehicleTurnRadius)
+        {
+            var detectorCells = graph.GetRange(centerCoordinate, detectorRadius);
+            // var vehicleCells = graph.GetRange(centerCoordinate, vehicleTurnRadius);
+            // foreach (var vehicleCell in vehicleCells)
+            // {
+            //     detectorCells.Remove(vehicleCell);
+            // }
+            return detectorCells;
+        }
 
         public static List<Cell> GetCoveredCells(
             ISquareMap squareMap,

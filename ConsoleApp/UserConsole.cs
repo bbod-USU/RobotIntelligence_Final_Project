@@ -22,9 +22,9 @@ namespace ConsoleApp
 
         public static void PrintInvalidInput() => Console.WriteLine($"Invalid input try again \n");
 
-            public (int width, int height) GetMapDimensions()
+        public (int width, int height) GetMapDimensions()
         {
-            Console.WriteLine($"Enter map height: ");
+            Console.WriteLine($"Enter map width: ");
             var x = GetUserInput();
 
             if (!int.TryParse(x, out var width))

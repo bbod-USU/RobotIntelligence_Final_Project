@@ -10,7 +10,6 @@ namespace ConsoleApp.Maps
         private int _defaultWidth;
         public int Height { get; protected set; }
         public int Width { get; protected set; }
-        public int CellWidth { get; }
         
 
         
@@ -22,11 +21,17 @@ namespace ConsoleApp.Maps
 
         public void GenerateMaps(int x, int y, double minePercentage)
         {
-            Width = x;
-            Height = y;
-            _squareMap = new SquareMap(x, y);
-            _hexMap = new HexMap(x, y);
-            _mineMap = new MineMap(x, y, minePercentage);
+            //convert to cm
+            x *= 100;
+            y *= 100;
+            //calculate number of cells on x and y axis
+            var xCellCount = (int)Math.Ceiling((decimal) (x) / 25);
+            var yCellCount = (int)Math.Ceiling((decimal) (y) / 25);
+            Width = xCellCount;
+            Height = yCellCount;
+            _squareMap = new SquareMap(xCellCount, yCellCount);
+            _hexMap = new HexMap(xCellCount, yCellCount);
+            _mineMap = new MineMap(xCellCount, yCellCount, minePercentage);
         }
         public IHexMap GetHexMap() => _hexMap ?? throw new NullReferenceException("hex map not initialized");
         public ISquareMap GetSquareMap() => _squareMap ?? throw new NullReferenceException("square map not initialized");
@@ -34,7 +39,6 @@ namespace ConsoleApp.Maps
 
         public MapFactory(IVehicle vehicle)
         {
-            CellWidth = vehicle.Width/2;
             _defaultHeight = 0;
             _defaultWidth = 0;
             Height = _defaultHeight;
