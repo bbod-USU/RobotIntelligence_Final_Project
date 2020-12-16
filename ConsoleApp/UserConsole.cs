@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using ConsoleApp.Maps;
 
@@ -6,8 +7,6 @@ namespace ConsoleApp
 {
     public class UserConsole : IUserConsole
     {
-        private IMapFactory _mapFactory;
-
         public UserConsole()
         {
         }
@@ -19,28 +18,40 @@ namespace ConsoleApp
                               $"\t 2: Load custom map. \n");
         }
 
-        public string GetUserInput() => Console.ReadLine();
+        public static string GetUserInput() => Console.ReadLine();
 
-        public void PrintInvalidInput()
-        {
-            Console.WriteLine($"Invalid input try again \n");
-        }
+        public static void PrintInvalidInput() => Console.WriteLine($"Invalid input try again \n");
 
-        public (int width, int height) GetMapDimensions()
+            public (int width, int height) GetMapDimensions()
         {
-            Console.WriteLine($"Enter Dimensions of map/area to clear as (x, y)");
-            var input = GetUserInput();
-            var numbers = input.Split();
-            if (numbers.Length != 4)
+            Console.WriteLine($"Enter map height: ");
+            var x = GetUserInput();
+
+            if (!int.TryParse(x, out var width))
             {
                 PrintInvalidInput();
                 GetMapDimensions();
             }
 
-            var parsedNumbers = numbers.Where(x => !(x.Equals("(") || x.Equals(")"))).ToList();
-            int.TryParse(parsedNumbers[0], out var width);
-            int.TryParse(parsedNumbers[1], out var height);
+            Console.WriteLine($"Enter map height: ");
+            var y = GetUserInput();
+            if (int.TryParse(y, out var height)) return (width, height);
+            PrintInvalidInput();
+            GetMapDimensions();
             return (width, height);
+        }
+
+        public static double GetMinePercentage()
+        {
+            
+            Console.WriteLine($"Enter desired percentage of mines: ");
+            var x = GetUserInput();
+
+            if (double.TryParse(x, out var percent)) return percent;
+            PrintInvalidInput();
+            GetMinePercentage();
+
+            return percent;
         }
     }
 }

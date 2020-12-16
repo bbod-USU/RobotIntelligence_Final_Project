@@ -10,33 +10,35 @@ namespace ConsoleApp
 
         static void Main(string[] args)
         {
-            _bootstrapper = new BootStrapper();
+            _bootstrapper = BootStrapper.BootstrapSystem(new CoreModule());
             _userConsole = new UserConsole();
-            StartSimulation();
+            Initialization();
+            Console.WriteLine("Program Completed");
         }
 
-        private static void StartSimulation()
+        private static void Initialization()
         {
             _userConsole.PrintStartMenu();
-            var input = _userConsole.GetUserInput();
+            var input = UserConsole.GetUserInput();
             if (input == "1")
             {
                 var (x,y) = _userConsole.GetMapDimensions();
-                RunSimulation(x, y);
+                var minePercentage = UserConsole.GetMinePercentage();
+                RunSimulation(x, y, minePercentage);
             }
             else
             {
-                _userConsole.PrintInvalidInput();
-                StartSimulation();
+                UserConsole.PrintInvalidInput();
+                Initialization();
             }
         }
 
-        private static void RunSimulation(int x,int y)
+        private static void RunSimulation(int x, int y, double minePercentage)
         {
-            var simRunner = _bootstrapper.Resolve<ISimRunner>();
             var mapFactory = _bootstrapper.Resolve<IMapFactory>();
+            var simRunner = _bootstrapper.Resolve<ISimRunner>();
             
-            mapFactory.GenerateMaps(x, y);
+            mapFactory.GenerateMaps(x, y, minePercentage);
             simRunner.Run();
         }
 

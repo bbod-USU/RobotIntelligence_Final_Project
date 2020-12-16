@@ -5,8 +5,23 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DebugType>full</DebugType>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DebugType>full</DebugType>
+    </PropertyGroup>
+
     <ItemGroup>
       <PackageReference Include="DryIoc.dll" Version="4.5.2" />
+      <PackageReference Include="HexCore" Version="4.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Sim\VehicleConfiguration.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>
