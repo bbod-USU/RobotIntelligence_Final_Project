@@ -1,6 +1,5 @@
 {
-  "Length": 3,
-  "Width": 2,
-  "DetectorRadius": 3,
-  "DetectorOffset": 2
+  "Length": 1,
+  "Width": 1,
+  "DetectorRadius": 1
 }

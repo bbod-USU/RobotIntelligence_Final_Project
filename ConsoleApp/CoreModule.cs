@@ -15,6 +15,7 @@ namespace ConsoleApp
             container.Register<IJsonDeserializor, JsonDeserializor>(Reuse.Singleton);
             container.Register<IPathPlanner, PathPlanner>(Reuse.Singleton);
             container.Register<IReactivePathPlanner, ReactivePathPlanner>(Reuse.Singleton);
+            container.Register<ISimulationResults, SimulationResults>(Reuse.Singleton);
         }
         
 

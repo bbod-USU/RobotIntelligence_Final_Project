@@ -7,9 +7,11 @@
         <e p="Bootstrapper.cs" t="Include" />
         <e p="ConsoleApp.csproj" t="IncludeRecursive" />
         <e p="CoreModule.cs" t="Include" />
+        <e p="HexPlot.py" t="Include" />
         <e p="IJsonDeserializor.cs" t="Include" />
         <e p="IModule.cs" t="Include" />
         <e p="ISimRunner.cs" t="Include" />
+        <e p="ISimulationResults.cs" t="Include" />
         <e p="IUserConsole.cs" t="Include" />
         <e p="JsonDeserializor.cs" t="Include" />
         <e p="Maps" t="Include">
@@ -34,6 +36,12 @@
             </e>
           </e>
         </e>
+        <e p="Output" t="Include">
+          <e p="Data.txt" t="Include" />
+          <e p="HexDetectedMines.txt" t="Include" />
+          <e p="HexPath.txt" t="Include" />
+          <e p="HexTest.png" t="Include" />
+        </e>
         <e p="PathPlanners" t="Include">
           <e p="IPathPlanner.cs" t="Include" />
           <e p="IReactivePathPlanner.cs" t="Include" />
@@ -49,6 +57,7 @@
           <e p="VehicleConfiguration.json" t="Include" />
         </e>
         <e p="SimRunner.cs" t="Include" />
+        <e p="SimulationResults.cs" t="Include" />
         <e p="UserConsole.cs" t="Include" />
       </e>
       <e p="packages" t="ExcludeRecursive" />

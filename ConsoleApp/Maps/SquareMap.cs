@@ -19,26 +19,21 @@ namespace ConsoleApp.Maps
         /// <param name="y"></param>
         public SquareMap(int x, int y)
         {
-            //convert to cm
-            x *= 100;
-            y *= 100;
-            //calculate number of cells on x and y axis
-            var xCellCount = (int)Math.Ceiling((decimal) (x) / 25);
-            var yCellCount = (int)Math.Ceiling((decimal) (y) / 25);
+  
             
             //set Width and height Properties
-            Width = xCellCount-1;
-            Height = yCellCount-1;
+            Width = x-1;
+            Height = y-1;
 
             
             //Initialize Map
-            Map = new Cell[xCellCount, yCellCount];
+            Map = new Cell[x, y];
 
             //set last cell;
             StartingCell = Map[0, 0];
-            for (int i = 0; i < xCellCount; i++)
+            for (int i = 0; i < x; i++)
             {
-                for (int j = 0; j < yCellCount; j++)
+                for (int j = 0; j < y; j++)
                 {
                     Map[i,j] = new Cell(i, j);
                 }

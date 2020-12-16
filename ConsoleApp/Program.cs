@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO;
+using System.Reflection;
+using System.Threading;
 using ConsoleApp.Maps;
 
 namespace ConsoleApp
@@ -11,10 +15,14 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             _bootstrapper = BootStrapper.BootstrapSystem(new CoreModule());
+            var simResults = _bootstrapper.Resolve<ISimulationResults>();
             _userConsole = new UserConsole();
             Initialization();
+            simResults.WriteResults();
             Console.WriteLine("Program Completed");
         }
+
+       
 
         private static void Initialization()
         {

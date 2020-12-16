@@ -55,7 +55,7 @@ namespace ConsoleApp.PathPlanners
 
             return path;
         }
-        
+
         public Queue<Coordinate2D> GenerateOptimalHexPath(IHexMap hexMap, IVehicle vehicle)
         {
             var currentPostion = vehicle.CurrentHexCell;
@@ -64,55 +64,44 @@ namespace ConsoleApp.PathPlanners
             var path = new List<Coordinate2D>();
             while (!finished)
             {
+                //Heading East
                 if (currentHeading == GlobalDirection.East)
                 {
                     path.AddRange(hexMap.Graph.GetShortestPath(
                         currentPostion,
-                        new Coordinate2D(hexMap.Width, currentPostion.Y, hexMap.OffsetType),
+                        new Coordinate2D(hexMap.Width-1, currentPostion.Y, hexMap.OffsetType),
                         hexMap.DefaultMovement));
-                    currentPostion = new Coordinate2D(hexMap.Width, currentPostion.Y, hexMap.OffsetType);
+                    currentPostion = new Coordinate2D(hexMap.Width-1, currentPostion.Y, hexMap.OffsetType);
                 }
-                
-                else if(currentHeading == GlobalDirection.West)
+                //Heading West
+                else if (currentHeading == GlobalDirection.West)
                 {
                     path.AddRange(hexMap.Graph.GetShortestPath(
                         currentPostion,
                         new Coordinate2D(0, currentPostion.Y, hexMap.OffsetType),
                         hexMap.DefaultMovement));
                     currentPostion = new Coordinate2D(0, currentPostion.Y, hexMap.OffsetType);
-                    
+                
                 }
 
-                if (currentPostion.Y + vehicle.DetectorRadius * 2 > hexMap.Height)
+                //Check for finish
+                if (currentPostion.Y + (vehicle.DetectorRadius * 2) >= hexMap.Height - 1)
                 {
                     finished = true;
                     break;
                 }
 
-                Coordinate2D tmpPosition;
-                    if(currentHeading == GlobalDirection.East) 
-                        tmpPosition = new Coordinate3D(
-                            currentPostion.To3D().X-1, 
-                            currentPostion.To3D().Y,
-                            currentPostion.To3D().Z+1).To2D(hexMap.OffsetType);
-                    else
-                        tmpPosition = new Coordinate3D(
-                            currentPostion.To3D().X, 
-                            currentPostion.To3D().Y-1,
-                            currentPostion.To3D().Z+1).To2D(hexMap.OffsetType);
-                while (hexMap.Graph.GetRange(currentPostion, vehicle.DetectorRadius*2).Contains(tmpPosition))
+                //Move Up edges of map
+                var tmpPosition = currentPostion;
+                var range = hexMap.Graph.GetRange(currentPostion, vehicle.DetectorRadius * 2);
+                for (var i = currentPostion.Y; i < currentPostion.Y + vehicle.DetectorRadius * 2; i++)
                 {
-                    if(currentHeading == GlobalDirection.East) 
-                        tmpPosition = new Coordinate3D(
-                            tmpPosition.To3D().X-1, 
-                            tmpPosition.To3D().Y,
-                            tmpPosition.To3D().Z+1).To2D(hexMap.OffsetType);
-                    else
-                        tmpPosition = new Coordinate3D(
-                            tmpPosition.To3D().X, 
-                            tmpPosition.To3D().Y-1,
-                            tmpPosition.To3D().Z+1).To2D(hexMap.OffsetType);
+                    var newCoord = new Coordinate2D(currentPostion.X, i, hexMap.OffsetType);
+                    if (range.Contains(newCoord))
+                        tmpPosition = newCoord;
+                   
                 }
+                
                 path.AddRange(hexMap.Graph.GetShortestPath(
                     currentPostion,
                     tmpPosition,
@@ -122,9 +111,11 @@ namespace ConsoleApp.PathPlanners
                     currentHeading = GlobalDirection.West;
                 else
                     currentHeading = GlobalDirection.East;
-
-
+                
+                
+               
             }
+
             return new Queue<Coordinate2D>(path);
         }
     }

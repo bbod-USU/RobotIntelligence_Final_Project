@@ -1,4 +1,5 @@
 using ConsoleApp.Maps;
+using HexCore;
 
 namespace ConsoleApp.Sim
 {
@@ -6,11 +7,9 @@ namespace ConsoleApp.Sim
     {
         int Length { get; }
         int Width { get; }
-        int DetectorOffset { get;}
+        int TurnRadius { get; }
         int DetectorRadius { get;}
-        HexCore.Coordinate2D CurrentHexCell { get; set; }
-        Heading HexHeading { get; set; }
-        Heading SquareHeading { get; set; }
+        Coordinate2D CurrentHexCell { get; set; }
         ICell CurrentSquareCell { get; set; }
     }
 }
