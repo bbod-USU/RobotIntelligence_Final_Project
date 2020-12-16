@@ -1,0 +1,7 @@
+General:
+	 Total Mines: 23
+Hex: 
+	 Total Moves: 927
+	 Bombs Found: 23
+	 Cleared Cell Count: 2295
+	 Uncleared Cell Count: 9

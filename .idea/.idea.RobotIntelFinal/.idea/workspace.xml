@@ -18,29 +18,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dafcaeb7-80aa-43a3-a480-786fafb78c0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ConsoleApp/plot.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/ISimulationResults.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/SimulationResults.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/ConsoleApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/ConsoleApp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/HexMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/HexMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/IHexMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/IHexMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/IMapFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/IMapFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/IMineMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/IMineMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/MapExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/MapExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/MapFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/MapFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/MineMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/MineMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/SquareMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/SquareMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/PathPlanners/IReactivePathPlanner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/PathPlanners/IReactivePathPlanner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/PathPlanners/PathPlanner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/PathPlanners/PathPlanner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/PathPlanners/ReactivePathPlanner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/PathPlanners/ReactivePathPlanner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Output/DetectedMines.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Output/DetectedMines.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Output/Mines.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Output/Mines.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Output/SavedList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Output/SavedList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Output/test.png" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Output/test.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Sim/DetectionHead.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Sim/DetectionHead.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Sim/IVehicle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Sim/IVehicle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Sim/Vehicle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Sim/Vehicle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Sim/VehicleConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Sim/VehicleConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Sim/VehicleConfiguration.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Sim/VehicleConfiguration.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/UserConsole.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/UserConsole.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/HexPlot.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +121,6 @@
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/ICell.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/PathPlanners/IPathPlanner.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/ConsoleApp.csproj" />
-      <option value="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/CellExtensions.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/MapExtensions.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Sim/IVehicle.cs" />
@@ -138,19 +129,22 @@
       <option value="$PROJECT_DIR$/ConsoleApp/UserConsole.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/SquareMap.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/HexMap.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/Maps/IMineMap.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/MapFactory.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/IMapFactory.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Sim/VehicleConfiguration.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Sim/Vehicle.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Sim/VehicleConfiguration.json" />
       <option value="$PROJECT_DIR$/ConsoleApp/Sim/DetectionHead.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/Program.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/Maps/MineMap.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/plot.py" />
       <option value="$PROJECT_DIR$/ConsoleApp/PathPlanners/PathPlanner.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/PathPlanners/ReactivePathPlanner.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/plot.py" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Maps/MineMap.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Maps/IMineMap.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/ISimulationResults.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Program.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/SimulationResults.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lIZ7IfsUjzqV2Jb1obOFvGFAfp" />
@@ -228,7 +222,7 @@
       <workItem from="1607982179018" duration="634000" />
       <workItem from="1607983288378" duration="86000" />
       <workItem from="1607983862958" duration="7777000" />
-      <workItem from="1607993290571" duration="69552000" />
+      <workItem from="1607993290571" duration="72449000" />
     </task>
     <servers />
   </component>

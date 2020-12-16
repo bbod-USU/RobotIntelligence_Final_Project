@@ -10,7 +10,7 @@ if __name__ == "__main__":
     ym = []
     xf = []
     yf = []
-    with open("/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/SavedList.txt") as c:
+    with open("/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/HexPath.txt") as c:
         for line in c:
             x, y = line.split()
             xc.append(int(x))
@@ -22,7 +22,7 @@ if __name__ == "__main__":
             xm.append(int(x))
             ym.append(int(y))
 
-    with open("/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/DetectedMines.txt") as f:
+    with open("/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/HexDetectedMines.txt") as f:
         for line in f:
             x, y = line.split()
             xf.append(int(x))
@@ -32,8 +32,8 @@ if __name__ == "__main__":
     plt.plot(xc, yc, 'o', label='vehicle',  color='blue')
     plt.plot(xm, ym, 'o', label='all mines', color='red')
     plt.plot(xf, yf, 'o', label='detected mines', color='orange')
-    plt.title('test 9')
+    plt.title('Hex Simulation')
     plt.legend(loc='lower left', fontsize='xx-small')
 
-    matplotlib.pyplot.savefig('/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/test.png')
+    matplotlib.pyplot.savefig('/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/HexTest.png')
     plt.close(fig)

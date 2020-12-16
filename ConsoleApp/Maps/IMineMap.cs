@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace ConsoleApp.Maps
 {
     public interface IMineMap
@@ -6,5 +8,6 @@ namespace ConsoleApp.Maps
         
         int TotalBombs { get; }
         bool GetCell(int x, int y);
+        List<Cell> PlacedMines { get; }
     }
 }

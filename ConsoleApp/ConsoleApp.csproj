@@ -22,7 +22,7 @@
       <None Update="Sim\VehicleConfiguration.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
-      <None Update="plot.py">
+      <None Update="HexPlot.py">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>

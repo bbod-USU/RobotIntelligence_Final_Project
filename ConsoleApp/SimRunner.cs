@@ -24,19 +24,23 @@ namespace ConsoleApp
         private IReactivePathPlanner _reactivePathPlanner;
         private HashSet<Coordinate2D> hexBombsFound = new HashSet<Coordinate2D>();
         private List<Coordinate2D> testingPath = new List<Coordinate2D>();
+        private ISimulationResults _simulationResults;
 
 
-        public SimRunner(IMapFactory mapFactory, IVehicle vehicle, IPathPlanner pathPlanner, IReactivePathPlanner reactivePathPlanner)
+        public SimRunner(IMapFactory mapFactory, IVehicle vehicle, IPathPlanner pathPlanner, IReactivePathPlanner reactivePathPlanner, ISimulationResults simulationResults)
         {
             _mapFactory = mapFactory;
             _vehicle = vehicle;
             _pathPlanner = pathPlanner;
             _reactivePathPlanner = reactivePathPlanner;
+            _simulationResults = simulationResults;
         }
 
         public void Run()
         {
             _mineMap = _mapFactory.GetMineMap();
+            _simulationResults.Mines = _mineMap.PlacedMines;
+            _simulationResults.TotalBombs = _mineMap.TotalBombs;
             SquareSimulation();
             HexSimulation();
             // while(!squareTask.IsCompleted && !hexTask.IsCompleted){Thread.Sleep(500);}
@@ -48,13 +52,12 @@ namespace ConsoleApp
             var hexMap = _mapFactory.GetHexMap();
             _vehicle.CurrentHexCell = new Coordinate2D(0, 0, OffsetTypes.OddRowsRight);
             var optimalPath = _pathPlanner.GenerateOptimalHexPath(hexMap, _vehicle);
-            var minimumMoves = optimalPath.Count;
             var finished = false;
             var totalMoves = 0;
             while (!finished)
             {
                 totalMoves += 1;
-                testingPath.Add(_vehicle.CurrentHexCell);
+                _simulationResults.HexPath.Add(_vehicle.CurrentHexCell);
 
                 var detectionCells = DetectionHead.GetCoveredCells(hexMap.Graph, _vehicle.CurrentHexCell, _vehicle.DetectorRadius, _vehicle.TurnRadius);
                 //Check Cells for mine
@@ -80,63 +83,38 @@ namespace ConsoleApp
                         break;
                     }
 
-                    var replan = false;
-                    //if the next optimal cell is blocked then we need to replan around it.
-                    while (hexMap.Graph.IsCellBlocked(nextOptimal))
+                    if (hexMap.Graph.IsCellBlocked(nextOptimal))
                     {
-                        replan = true;
-                        if (optimalPath.TryDequeue(out nextOptimal)) continue;
-                        finished = true;
-                        break;
+                        _reactivePathPlanner.GenerateReactiveHexPath(hexMap, optimalPath, _vehicle.CurrentHexCell);
                     }
-                    if(replan)
-                    {
-                        var tmpPath =
-                            hexMap.Graph.GetShortestPath(_vehicle.CurrentHexCell, nextOptimal, hexMap.DefaultMovement);
-                        if (Math.Abs(_vehicle.CurrentHexCell.X - nextOptimal.X) > 1 || Math.Abs(_vehicle.CurrentHexCell.Y - nextOptimal.Y) > 1)
-                            optimalPath.Dequeue();
-                        tmpPath.AddRange(optimalPath);
-                        
-                        optimalPath.Clear();
-                        foreach (var cell in tmpPath)
-                        {
-                            optimalPath.Enqueue(cell);
-                        }
-                        optimalPath.TryDequeue(out nextOptimal);
-                    }
-
-                    var last = testingPath[testingPath.Count-1];
-                    if (Math.Abs(last.X - nextOptimal.X) > 1 || Math.Abs(last.Y - nextOptimal.Y) > 1)
-                        Console.WriteLine("To big of a gap");
-                  
-                    _vehicle.CurrentHexCell = nextOptimal;
+                    else
+                        _vehicle.CurrentHexCell = nextOptimal;
                 }
             }
             
             
             //Debugging information
-            using(TextWriter tw = new StreamWriter("/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/SavedList.txt"))
-            {
-                foreach (Coordinate2D s in testingPath)
-                    tw.WriteLine($"{s.X} {s.Y}");
-            }
-            using(TextWriter tw = new StreamWriter("/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/DetectedMines.txt"))
-            {
-                foreach (Coordinate2D s in hexBombsFound)
-                    tw.WriteLine($"{s.X} {s.Y}");
-            }
-            var covered = CoveredCells();
-            Console.WriteLine($"Total cells traversed: {totalMoves} \n" +
-                              $"Minimum required: {minimumMoves}");
-            Console.WriteLine($"Total bombs found: {hexBombsFound.Count}/{_mineMap.TotalBombs}");
-            
+            var (cleared, uncleared) = CoveredCells();
+            _simulationResults.HexClearedCells = cleared;
+            _simulationResults.HexUnClearedCells = uncleared;
+            _simulationResults.HexTotalMoves = totalMoves;
+            _simulationResults.HexBombsFound = hexBombsFound.Count;
         }
 
-        private int CoveredCells()
+        private (int, int) CoveredCells()
         {
+            var cleared = 0;
+            var uncleared = 0;
             var hexMap = _mapFactory.GetHexMap();
-            //for()
-            return 0;
+            foreach (var cellState in hexMap.Graph.GetAllCells())
+            {
+                if (cellState.TerrainType.Id == hexMap.ClearedTerrain.Id)
+                    cleared++;
+                if (cellState.TerrainType.Id == hexMap.UnclearedTerrain.Id)
+                    uncleared++;
+            }
+
+            return (cleared, uncleared);
         }
 
 
@@ -158,11 +136,6 @@ namespace ConsoleApp
             var cellsToBlock = hexMap.Graph.GetRange(cell, _vehicle.Width / 2);
             hexMap.Graph.BlockCells(cellsToBlock);
             
-            // //debugging
-            // foreach (var celllll in cellsToBlock)
-            // {
-            //     Console.WriteLine($"({celllll.X}, {celllll.Y}) Blocked: {hexMap.Graph.GetCellState(celllll).IsBlocked}");    
-            // }
         }
 
 
