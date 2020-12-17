@@ -11,7 +11,7 @@ namespace ConsoleApp.Sim
         public int TurnRadius { get; }
         public int DetectorRadius { get;}
         public HexCore.Coordinate2D CurrentHexCell { get; set; }
-        public ICell CurrentSquareCell { get; set; }
+        public Cell CurrentSquareCell { get; set; }
         
         
 

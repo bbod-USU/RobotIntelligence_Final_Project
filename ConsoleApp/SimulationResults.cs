@@ -18,6 +18,15 @@ namespace ConsoleApp
         public List<Cell> Mines { get; set; }
         public int HexClearedCells { get; set; }
         public int HexUnClearedCells { get; set; }
+        
+        public List<ICell> SquarePath { get; set; }
+        public List<ICell> SquareMappedBombs { get; set; }
+        public int SquareCellsUncleared { get; set; }
+        public int SquareCellsCleared { get; set; }
+        public int SquareBombsFound { get; set; }
+        public int SquareTotalMoves { get; set; }
+        public List<ICell> SquareCoveredCells { get; set; }
+        public List<Coordinate2D> HexCoveredCells { get; set; }
 
         public SimulationResults()
         {
@@ -29,6 +38,15 @@ namespace ConsoleApp
             Mines = new List<Cell>();
             HexClearedCells = 0;
             HexUnClearedCells = 0;
+            SquarePath = new List<ICell>();
+            SquareMappedBombs = new List<ICell>();
+            SquareCellsUncleared = 0;
+            SquareCellsCleared = 0;
+            SquareBombsFound = 0;
+            SquareTotalMoves = 0;
+            SquareCoveredCells = new List<ICell>();
+            HexCoveredCells = new List<Coordinate2D>();
+
         }
 
         public void WriteResults()
@@ -37,28 +55,9 @@ namespace ConsoleApp
             WriteMines();
             WritePaths();
             WriteDetectedMines();
-            GenerateImages();
+            WriteCoveredCells();
         }
         
-        private static void GenerateImages()
-        {
-            var file = Path.Combine("./",Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"HexPlot.py");
-            ProcessStartInfo startInfo = new ProcessStartInfo()
-            {
-                FileName = "python3",
-                Arguments = file,
-                UseShellExecute = true
-            };
-            Process proc = new Process()
-            {
-                StartInfo = startInfo,
-            };
-            proc.Start();
-            while (!proc.HasExited)
-            {
-                Thread.Sleep(500);
-            }
-        }
 
         private void WriteData()
         {
@@ -71,9 +70,19 @@ namespace ConsoleApp
                 tw.WriteLine($"\t Bombs Found: {HexBombsFound}");
                 tw.WriteLine($"\t Cleared Cell Count: {HexClearedCells}");
                 tw.WriteLine($"\t Uncleared Cell Count: {HexUnClearedCells}");
+                tw.WriteLine($"\t Percentage Cleared: {(double)HexClearedCells/(HexClearedCells+HexUnClearedCells)*100}");
+                tw.WriteLine($"Square: ");
+                tw.WriteLine($"\t Total Moves: {SquareTotalMoves}");
+                tw.WriteLine($"\t Bombs Found: {SquareBombsFound}");
+                tw.WriteLine($"\t Cleared Cell Count: {SquareCellsCleared}");
+                tw.WriteLine($"\t Uncleared Cell Count: {SquareCellsUncleared}");
+                tw.WriteLine($"\t Percentage Cleared: {(double) SquareCellsCleared / (SquareCellsCleared + SquareCellsUncleared)*100}");
+
             }
         }
 
+       
+        
         private void WriteMines()
         {
             using(TextWriter tw = new StreamWriter("/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/Mines.txt"))
@@ -83,11 +92,30 @@ namespace ConsoleApp
             }
         }
 
+        private void WriteCoveredCells()
+        {
+            using(TextWriter tw = new StreamWriter("/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/HexCoveredCells.txt"))
+            {
+                foreach (var s in HexCoveredCells)
+                    tw.WriteLine($"{s.X} {s.Y}");
+            }        
+            using(TextWriter tw = new StreamWriter("/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/SquareCoveredCells.txt"))
+            {
+                foreach (var s in SquareCoveredCells)
+                    tw.WriteLine($"{s.X} {s.Y}");
+            }        
+        }
+        
         private void WriteDetectedMines()
         {
             using(TextWriter tw = new StreamWriter("/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/HexDetectedMines.txt"))
             {
-                foreach (Coordinate2D s in HexMappedBombs)
+                foreach (var s in HexMappedBombs)
+                    tw.WriteLine($"{s.X} {s.Y}");
+            }        
+            using(TextWriter tw = new StreamWriter("/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/SquareDetectedMines.txt"))
+            {
+                foreach (var s in SquareMappedBombs)
                     tw.WriteLine($"{s.X} {s.Y}");
             }        
         }
@@ -96,9 +124,15 @@ namespace ConsoleApp
         {
             using(TextWriter tw = new StreamWriter("/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/HexPath.txt"))
             {
-                foreach (Coordinate2D s in HexPath)
+                foreach (var s in HexPath)
                     tw.WriteLine($"{s.X} {s.Y}");
             }
+            using(TextWriter tw = new StreamWriter("/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/SquarePath.txt"))
+            {
+                foreach (var s in SquarePath)
+                    tw.WriteLine($"{s.X} {s.Y}");
+            }
+            
         }
     }
 }

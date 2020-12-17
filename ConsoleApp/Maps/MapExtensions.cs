@@ -1,5 +1,12 @@
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using Example;
+
 namespace ConsoleApp.Maps
 {
+
     public static class MapExtensions
     {
         public static void Fill2DArray<T>(this T[,] arr, T value)

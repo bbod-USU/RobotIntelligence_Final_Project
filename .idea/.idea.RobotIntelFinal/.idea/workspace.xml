@@ -18,21 +18,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dafcaeb7-80aa-43a3-a480-786fafb78c0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ConsoleApp/ISimulationResults.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleApp/SimulationResults.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ConsoleApp/Maps/AstarSquareSearch.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RobotIntelFinal/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/ConsoleApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/ConsoleApp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/IMineMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/IMineMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/MineMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/MineMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Output/DetectedMines.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Output/DetectedMines.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Output/Mines.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Output/Mines.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Output/SavedList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Output/SavedList.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/Output/test.png" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Output/test.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/HexPlot.py" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/HexPlot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/ISimulationResults.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/ISimulationResults.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/Cell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/Cell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/ICell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/ICell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/ISquareMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/ISquareMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/MapExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/MapExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Maps/SquareMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Maps/SquareMap.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Output/Data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Output/Data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Output/HexDetectedMines.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Output/HexDetectedMines.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Output/HexPath.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Output/HexPath.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Output/HexTest.png" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Output/HexTest.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/PathPlanners/IReactivePathPlanner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/PathPlanners/IReactivePathPlanner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/PathPlanners/PathPlanner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/PathPlanners/PathPlanner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/PathPlanners/ReactivePathPlanner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/PathPlanners/ReactivePathPlanner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Sim/DetectionHead.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Sim/DetectionHead.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Sim/IVehicle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Sim/IVehicle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Sim/Vehicle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Sim/Vehicle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/Sim/VehicleConfiguration.json" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/Sim/VehicleConfiguration.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsoleApp/plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/HexPlot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleApp/SimulationResults.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleApp/SimulationResults.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,38 +59,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE5CA5D4-EDEB-48AE-9C0D-FE354330FB77/0b/0953c23b/GraphFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE5CA5D4-EDEB-48AE-9C0D-FE354330FB77/f7/268fdeac/Graph.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EB067793-5C3F-4219-AEF1-3AB117C20649/133/Thread.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7AFCB195-1BDF-4087-9F2D-5BFCFC407B2B/46/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EB067793-5C3F-4219-AEF1-3AB117C20649/39B/EqualityComparer.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EB067793-5C3F-4219-AEF1-3AB117C20649/11/Array.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EB067793-5C3F-4219-AEF1-3AB117C20649/3A4/List.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7AFCB195-1BDF-4087-9F2D-5BFCFC407B2B/30/Where.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EB067793-5C3F-4219-AEF1-3AB117C20649/389/Comparer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE5CA5D4-EDEB-48AE-9C0D-FE354330FB77/3d/c367b191/Coordinate3D.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE5CA5D4-EDEB-48AE-9C0D-FE354330FB77/14/12025305/MovementTypes.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE5CA5D4-EDEB-48AE-9C0D-FE354330FB77/0b/0953c23b/GraphFactory.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE5CA5D4-EDEB-48AE-9C0D-FE354330FB77/84/4eb9c798/GraphUtils.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
@@ -90,16 +71,29 @@
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EB067793-5C3F-4219-AEF1-3AB117C20649/39B/EqualityComparer.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE5CA5D4-EDEB-48AE-9C0D-FE354330FB77/da/c3cabb46/AStarSearch.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EB067793-5C3F-4219-AEF1-3AB117C20649/11/Array.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EB067793-5C3F-4219-AEF1-3AB117C20649/3A4/List.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7AFCB195-1BDF-4087-9F2D-5BFCFC407B2B/30/Where.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EB067793-5C3F-4219-AEF1-3AB117C20649/CD/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8B2EA1A3-95EB-49F7-AF97-CA55CE776F10/4/Container.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EB067793-5C3F-4219-AEF1-3AB117C20649/389/Comparer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/EB067793-5C3F-4219-AEF1-3AB117C20649/B5/Random.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE5CA5D4-EDEB-48AE-9C0D-FE354330FB77/3d/c367b191/Coordinate3D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1C5C65AB-6C84-402C-B333-F3A5A7121EFE/D/Queue.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE5CA5D4-EDEB-48AE-9C0D-FE354330FB77/14/12025305/MovementTypes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -112,39 +106,41 @@
       <option value="$PROJECT_DIR$/ConsoleApp/IVehicle.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/IMap.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Vehicle.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/Maps/ISquareMap.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Vehicle/DetectionHead.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Vehicle/Vehicle.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Vehicle/VehicleConfiguration.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Vehicle/IVehicle.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/Maps/Cell.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/Maps/ICell.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/PathPlanners/IPathPlanner.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/ConsoleApp.csproj" />
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/CellExtensions.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/Maps/MapExtensions.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Sim/IVehicle.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/IHexMap.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/PathPlanners/IReactivePathPlanner.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/UserConsole.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/Maps/SquareMap.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/HexMap.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/MapFactory.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/IMapFactory.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Sim/VehicleConfiguration.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Sim/Vehicle.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/Sim/VehicleConfiguration.json" />
-      <option value="$PROJECT_DIR$/ConsoleApp/Sim/DetectionHead.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/PathPlanners/PathPlanner.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/PathPlanners/ReactivePathPlanner.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/CoreModule.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/plot.py" />
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/MineMap.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Maps/IMineMap.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" />
-      <option value="$PROJECT_DIR$/ConsoleApp/ISimulationResults.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Maps/ICell.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Maps/MapExtensions.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/PathPlanners/IReactivePathPlanner.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/PathPlanners/ReactivePathPlanner.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/Program.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Maps/AstarSquareSearch.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Maps/Cell.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Maps/SquareMap.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Maps/ISquareMap.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/ISimulationResults.cs" />
       <option value="$PROJECT_DIR$/ConsoleApp/SimulationResults.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Sim/DetectionHead.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/SimRunner.cs" />
+      <option value="$PROJECT_DIR$/ConsoleApp/Sim/VehicleConfiguration.json" />
+      <option value="$PROJECT_DIR$/ConsoleApp/HexPlot.py" />
+      <option value="$PROJECT_DIR$/ConsoleApp/PathPlanners/PathPlanner.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lIZ7IfsUjzqV2Jb1obOFvGFAfp" />
@@ -156,7 +152,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3496007" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.22377622" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -222,7 +218,9 @@
       <workItem from="1607982179018" duration="634000" />
       <workItem from="1607983288378" duration="86000" />
       <workItem from="1607983862958" duration="7777000" />
-      <workItem from="1607993290571" duration="72449000" />
+      <workItem from="1607993290571" duration="88336000" />
+      <workItem from="1608146906461" duration="175000" />
+      <workItem from="1608147111263" duration="13487000" />
     </task>
     <servers />
   </component>
@@ -247,33 +245,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/ConsoleApp/PathPlanners/PathPlanner.cs</url>
-          <line>34</line>
-          <properties documentPath="$PROJECT_DIR$/ConsoleApp/PathPlanner.cs" initialLine="34" containingFunctionPresentation="method 'GenerateOptimalSquarePath'">
-            <startOffsets>
-              <option value="1527" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1543" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Frame#ConsoleApp.PathPlanners.PathPlanner.GenerateOptimalHexPath" memberName="path" />
       </pinned-members>
     </pin-to-top-manager>
-    <watches-manager>
-      <configuration name="DotNetProject">
-        <watch expression="new System.Collections.Generic.QueueDebugView&lt;HexCore.Coordinate2D&gt;(optimalPath).Items[0]" />
-        <watch expression="Math.Abs(nextOptimal.X - _vehicle.CurrentHexCell.X) &gt; 1 || Math.Abs(nextOptimal.Y - _vehicle.CurrentHexCell.Y) &gt; 1" language="C#" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

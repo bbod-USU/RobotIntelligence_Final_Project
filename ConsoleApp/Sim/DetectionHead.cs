@@ -24,6 +24,6 @@ namespace ConsoleApp.Sim
         public static List<Cell> GetCoveredCells(
             ISquareMap squareMap,
             Cell centerCell,
-            int detectorRadius) => squareMap.GetRange(centerCell, detectorRadius);
+            int detectorRadius) => squareMap.GetRange(centerCell, detectorRadius * 2 - detectorRadius%2);
     }
 }

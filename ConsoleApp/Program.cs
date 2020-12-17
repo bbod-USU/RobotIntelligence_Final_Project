@@ -19,6 +19,7 @@ namespace ConsoleApp
             _userConsole = new UserConsole();
             Initialization();
             simResults.WriteResults();
+            GenerateImages();
             Console.WriteLine("Program Completed");
         }
 
@@ -48,6 +49,26 @@ namespace ConsoleApp
             
             mapFactory.GenerateMaps(x, y, minePercentage);
             simRunner.Run();
+        }
+        
+        private static void GenerateImages()
+        {
+            var file = Path.Combine("./",Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"HexPlot.py");
+            ProcessStartInfo startInfo = new ProcessStartInfo()
+            {
+                FileName = "python3",
+                Arguments = file,
+                UseShellExecute = true
+            };
+            Process proc = new Process()
+            {
+                StartInfo = startInfo,
+            };
+            proc.Start();
+            while (!proc.HasExited)
+            {
+                Thread.Sleep(500);
+            }
         }
 
     }
