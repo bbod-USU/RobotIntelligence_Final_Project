@@ -11,49 +11,49 @@ namespace ConsoleApp.PathPlanners
     {
         public Queue<ICell> GenerateOptimalSquarePath(ISquareMap map, IVehicle vehicle)
         {
-            var path = new Queue<ICell>();
-            var myCell = map.StartingCell;
+            var currentPostion = vehicle.CurrentSquareCell;
+            var currentHeading = GlobalDirection.East;
             var finished = false;
-            var width_cm = (double)(vehicle.DetectorRadius) * 100 * 2;
-            var swathOffset = (int)Math.Floor((decimal) (width_cm) / 25) + 1;
-            var currentHeading = GlobalDirection.North;
+            var path = new List<ICell>();
             while (!finished)
             {
-                var availableMoves = map.PossibleMoves(myCell);
-                if (availableMoves.Contains(GlobalDirection.North) && currentHeading == GlobalDirection.North &&
-                    myCell.Y != map.Height)
+                //Heading East
+                if (currentHeading == GlobalDirection.East)
                 {
-                    path.Enqueue(map.GetCell(myCell.X, myCell.Y + 1));
-                    myCell = map.GetCell(myCell.X, myCell.Y + 1);
+                    path.AddRange(
+                        map.GetShortestPath(currentPostion, map.GetCell(map.Width - 1, currentPostion.Y)));
+                    currentPostion = new Cell(map.Width - 1, currentPostion.Y);
                 }
-                else if (availableMoves.Contains(GlobalDirection.South) && currentHeading == GlobalDirection.South && myCell.Y != 0)
+                //Heading West
+                else if (currentHeading == GlobalDirection.West)
                 {
-                    path.Enqueue(map.GetCell(myCell.X, myCell.Y - 1));
-                    myCell = map.GetCell(myCell.X, myCell.Y - 1);
+                    path.AddRange(
+                        map.GetShortestPath(currentPostion, map.GetCell(0, currentPostion.Y)));
+                    currentPostion = new Cell(0, currentPostion.Y);
                 }
-                else
+                //Check for finish
+                if (currentPostion.Y + (vehicle.DetectorRadius * 2) >= map.Height)
                 {
-                    if (myCell.X + swathOffset >= map.Width)
-                    {
-                        finished = true;
-                    }
-                    else
-                    {
-                        for (int i = myCell.X; i < myCell.X + swathOffset; i++)
-                        {
-                            path.Enqueue(map.GetCell(i, myCell.Y));
-                        }
-                        myCell = map.GetCell(myCell.X+swathOffset, myCell.Y);
-                        if (currentHeading == GlobalDirection.North)
-                            currentHeading = GlobalDirection.South;
-                        else if (currentHeading == GlobalDirection.South)
-                            currentHeading = GlobalDirection.North;
-                    }
+                    finished = true;
+                    continue;
                 }
+                
+                //Move up X Axis
+                path.AddRange(
+                    map.GetShortestPath(
+                        currentPostion, 
+                        map.GetCell(currentPostion.X, currentPostion.Y + (vehicle.DetectorRadius * 2) - 1)));
 
+                currentPostion = new Cell(currentPostion.X, currentPostion.Y + (vehicle.DetectorRadius * 2) -1);
+                if (currentHeading == GlobalDirection.East)
+                    currentHeading = GlobalDirection.West;
+                else
+                    currentHeading = GlobalDirection.East;
+                
             }
 
-            return path;
+
+            return new Queue<ICell>(path);
         }
 
         public Queue<Coordinate2D> GenerateOptimalHexPath(IHexMap hexMap, IVehicle vehicle)

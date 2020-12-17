@@ -15,5 +15,13 @@ namespace ConsoleApp
         List<Cell> Mines { get; set; }
         int HexClearedCells { get; set; }
         int HexUnClearedCells { get; set; }
+        List<ICell> SquarePath { get; set; }
+        List<ICell> SquareMappedBombs { get; set; }
+        int SquareCellsUncleared { get; set; }
+        int SquareCellsCleared { get; set; }
+        int SquareBombsFound { get; set; }
+        int SquareTotalMoves { get; set; }
+        List<ICell> SquareCoveredCells { get; set; }
+        List<Coordinate2D> HexCoveredCells { get; set; }
     }
 }

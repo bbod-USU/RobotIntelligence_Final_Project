@@ -1,5 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Metadata.Ecma335;
+using System.Threading;
+using HexCore;
 
 
 namespace ConsoleApp.Maps
@@ -29,8 +33,7 @@ namespace ConsoleApp.Maps
             //Initialize Map
             Map = new Cell[x, y];
 
-            //set last cell;
-            StartingCell = Map[0, 0];
+            
             for (int i = 0; i < x; i++)
             {
                 for (int j = 0; j < y; j++)
@@ -38,6 +41,9 @@ namespace ConsoleApp.Maps
                     Map[i,j] = new Cell(i, j);
                 }
             }
+            
+            //set Starting cell;
+            StartingCell = GetCell(0,0);
         }
 
 
@@ -56,8 +62,13 @@ namespace ConsoleApp.Maps
 
             return possibles;
         }
+        
+        public List<ICell> GetShortestPath(ICell start, ICell goal)
+        {
+            return AstarSquareSearch.FindShortestPath(this, start, goal);
+        }
 
-        public List<Cell> GetRange(Cell centerCell, int radius)
+        public List<Cell> GetRange(ICell centerCell, int radius)
         {
             var inRange = new List<Cell>();
             var cx = centerCell.X;
@@ -77,6 +88,32 @@ namespace ConsoleApp.Maps
             return inRange;
         }
 
+        public List<ICell> GetPassableNeighbors(ICell cell) => 
+            GetNeighbors(cell).Where(neighbor => !neighbor.Blocked).Cast<ICell>().ToList();
+        
+        
+        private static int ComputeHScore(ICell src, Cell dest)
+        {
+            return Math.Abs(dest.X - src.X) + Math.Abs(dest.Y - src.Y);
+        }
+        
+
+        public List<Cell> GetNeighbors(ICell cell)
+        {
+            var rlist = new List<Cell>();
+            var rowOperations = new int[] { -1, 0, 0, 1};
+            var colOperations = new int[] {0, -1, 1, 0};
+            for (var i = 0; i < 4; i++)
+            {
+                var curCell = GetCell(cell.X + rowOperations[i], cell.Y + colOperations[i]);
+                if (curCell != default)
+                {
+                    rlist.Add(curCell);
+                }
+            }
+            return rlist;
+        }
+
         private Cell GetTopCellInBoundingBox(int cx, int cy, int radius)
         {
             int topX, topY;
@@ -91,16 +128,21 @@ namespace ConsoleApp.Maps
         private Cell GetBottomCellInBoundingBox(int cx, int cy, int radius)
         {
             int bottomX, bottomY;
-            if (cy - radius > 0) bottomY = 0;
+            if (cy - radius < 0) bottomY = 0;
             else
                 bottomY = cy - radius;
-            if (cx + radius < Width) bottomX = Width;
+            if (cx + radius > Width) bottomX = Width;
             else
                 bottomX = cx + radius;
             return Map[bottomX, bottomY];
         }
 
-        public Cell GetCell(int x, int y) => Map[x, y];
+        public Cell GetCell(int x, int y)
+        {
+            if (x > Width || y > Height || x < 0 || y < 0)
+                return default;
+            return Map[x, y];
+        }
 
     }
 }

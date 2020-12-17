@@ -10,6 +10,6 @@ namespace ConsoleApp.Sim
         int TurnRadius { get; }
         int DetectorRadius { get;}
         Coordinate2D CurrentHexCell { get; set; }
-        ICell CurrentSquareCell { get; set; }
+        Cell CurrentSquareCell { get; set; }
     }
 }

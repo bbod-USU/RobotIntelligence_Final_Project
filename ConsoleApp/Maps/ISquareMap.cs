@@ -12,6 +12,9 @@ namespace ConsoleApp.Maps
         Cell GetCell(int x, int y);
         int Height { get; }
         int Width { get; }
-        List<Cell> GetRange(Cell centerCell, int radius);
+        List<Cell> GetRange(ICell centerCell, int radius);
+        List<Cell> GetNeighbors(ICell cell);
+        List<ICell> GetPassableNeighbors(ICell cell);
+        List<ICell> GetShortestPath(ICell start, ICell goal);
     }
 }

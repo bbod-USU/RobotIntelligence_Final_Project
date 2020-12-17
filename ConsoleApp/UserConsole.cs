@@ -24,18 +24,18 @@ namespace ConsoleApp
 
         public (int width, int height) GetMapDimensions()
         {
-            Console.WriteLine($"Enter map width: ");
+            Console.WriteLine($"Enter map width (5-15) meters: ");
             var x = GetUserInput();
 
-            if (!int.TryParse(x, out var width))
+            if (!int.TryParse(x, out var width) && width >= 5 && width <= 15)
             {
                 PrintInvalidInput();
                 GetMapDimensions();
             }
 
-            Console.WriteLine($"Enter map height: ");
+            Console.WriteLine($"Enter map height (5-15) meters: ");
             var y = GetUserInput();
-            if (int.TryParse(y, out var height)) return (width, height);
+            if (int.TryParse(y, out var height) && height >= 5 && height <= 15) return (width, height);
             PrintInvalidInput();
             GetMapDimensions();
             return (width, height);

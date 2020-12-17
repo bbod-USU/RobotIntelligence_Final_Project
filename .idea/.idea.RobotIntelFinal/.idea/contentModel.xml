@@ -7,7 +7,6 @@
         <e p="Bootstrapper.cs" t="Include" />
         <e p="ConsoleApp.csproj" t="IncludeRecursive" />
         <e p="CoreModule.cs" t="Include" />
-        <e p="HexPlot.py" t="Include" />
         <e p="IJsonDeserializor.cs" t="Include" />
         <e p="IModule.cs" t="Include" />
         <e p="ISimRunner.cs" t="Include" />
@@ -15,6 +14,7 @@
         <e p="IUserConsole.cs" t="Include" />
         <e p="JsonDeserializor.cs" t="Include" />
         <e p="Maps" t="Include">
+          <e p="AstarSquareSearch.cs" t="Include" />
           <e p="Cell.cs" t="Include" />
           <e p="GlobalDirection.cs" t="Include" />
           <e p="Heading.cs" t="Include" />
@@ -38,16 +38,27 @@
         </e>
         <e p="Output" t="Include">
           <e p="Data.txt" t="Include" />
+          <e p="HexCoverage.png" t="Include" />
+          <e p="HexCoveredCells.txt" t="Include" />
           <e p="HexDetectedMines.txt" t="Include" />
           <e p="HexPath.txt" t="Include" />
           <e p="HexTest.png" t="Include" />
+          <e p="Mines.txt" t="Include" />
+          <e p="SquareCoverage.png" t="Include" />
+          <e p="SquareCoveredCells.txt" t="Include" />
+          <e p="SquareDetectedMines.txt" t="Include" />
+          <e p="SquarePath.txt" t="Include" />
+          <e p="SquareTest.png" t="Include" />
         </e>
+        <e p="Output 2.zip" t="Include" />
+        <e p="Output.zip" t="Include" />
         <e p="PathPlanners" t="Include">
           <e p="IPathPlanner.cs" t="Include" />
           <e p="IReactivePathPlanner.cs" t="Include" />
           <e p="PathPlanner.cs" t="Include" />
           <e p="ReactivePathPlanner.cs" t="Include" />
         </e>
+        <e p="plotGraphs.py" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Sim" t="Include">
           <e p="DetectionHead.cs" t="Include" />
