@@ -22,13 +22,20 @@ if __name__ == "__main__":
     hccx = []
     hccy = []
 
-    
+    mx = []
+    my = []
     
     with open("/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/SquareCoveredCells.txt") as c:
         for line in c:
             x, y = line.split()
             sccx.append(int(x))
             sccy.append(int(y))
+            
+    with open("/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/Mines.txt") as c:
+        for line in c:
+            x, y = line.split()
+            mx.append(int(x))
+            my.append(int(y))
     
     with open("/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/SquareDetectedMines.txt") as c:
         for line in c:
@@ -103,5 +110,13 @@ if __name__ == "__main__":
     plt.title('Square Coverage')
     plt.legend(loc='lower left', fontsize='xx-small')
     matplotlib.pyplot.savefig('/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/SquareCoverage.png')
+    plt.plot()
+    plt.close(fig)
+    
+    fig = plt.figure(5)
+    plt.plot(mx, my, 'o', label='mines', color='red', linestyle='None')
+    plt.title('Mine Map')
+    plt.legend(loc='lower left', fontsize='xx-small')
+    matplotlib.pyplot.savefig('/Users/brady.bodily/Documents/Repositories/CS5890_Robot_Intelligence/RobotIntelFinal/ConsoleApp/Output/Mines.png')
     plt.plot()
     plt.close(fig)
