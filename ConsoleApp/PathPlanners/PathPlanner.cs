@@ -42,9 +42,9 @@ namespace ConsoleApp.PathPlanners
                 path.AddRange(
                     map.GetShortestPath(
                         currentPostion, 
-                        map.GetCell(currentPostion.X, currentPostion.Y + vehicle.DetectorRadius * 2 - 1)));
+                        map.GetCell(currentPostion.X, currentPostion.Y + (vehicle.DetectorRadius * 2) - 1)));
 
-                currentPostion = new Cell(currentPostion.X, currentPostion.Y + (vehicle.DetectorRadius * 2 - 1));
+                currentPostion = new Cell(currentPostion.X, currentPostion.Y + (vehicle.DetectorRadius * 2) -1);
                 if (currentHeading == GlobalDirection.East)
                     currentHeading = GlobalDirection.West;
                 else

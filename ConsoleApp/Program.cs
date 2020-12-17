@@ -27,19 +27,10 @@ namespace ConsoleApp
 
         private static void Initialization()
         {
-            _userConsole.PrintStartMenu();
-            var input = UserConsole.GetUserInput();
-            if (input == "1")
-            {
-                var (x,y) = _userConsole.GetMapDimensions();
-                var minePercentage = UserConsole.GetMinePercentage();
-                RunSimulation(x, y, minePercentage);
-            }
-            else
-            {
-                UserConsole.PrintInvalidInput();
-                Initialization();
-            }
+            var (x,y) = _userConsole.GetMapDimensions();
+            var minePercentage = 1;
+            RunSimulation(x, y, minePercentage);
+
         }
 
         private static void RunSimulation(int x, int y, double minePercentage)
@@ -53,7 +44,7 @@ namespace ConsoleApp
         
         private static void GenerateImages()
         {
-            var file = Path.Combine("./",Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"HexPlot.py");
+            var file = Path.Combine("./",Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"plotGraphs.py");
             ProcessStartInfo startInfo = new ProcessStartInfo()
             {
                 FileName = "python3",

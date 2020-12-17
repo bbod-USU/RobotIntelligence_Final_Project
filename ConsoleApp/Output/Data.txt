@@ -1,14 +1,14 @@
 General:
-	 Total Mines: 23
+	 Total Mines: 36
 Hex: 
-	 Total Moves: 420
-	 Bombs Found: 23
-	 Cleared Cell Count: 2263
-	 Uncleared Cell Count: 41
-	 Percentage Cleared: 98.22048611111111
+	 Total Moves: 687
+	 Bombs Found: 35
+	 Cleared Cell Count: 3591
+	 Uncleared Cell Count: 9
+	 Percentage Cleared: 99.75
 Square: 
-	 Total Moves: 553
-	 Bombs Found: 20
-	 Cleared Cell Count: 1996
-	 Uncleared Cell Count: 308
-	 Percentage Cleared: 86.63194444444444
+	 Total Moves: 1045
+	 Bombs Found: 34
+	 Cleared Cell Count: 3251
+	 Uncleared Cell Count: 349
+	 Percentage Cleared: 90.30555555555554
